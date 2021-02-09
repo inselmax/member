@@ -1,0 +1,574 @@
+/* -----------------------------------------------
+ * variable
+  ---------------------------------------------- */
+
+$HeaderHeight: 63px;
+$SideWidth: 260px;
+
+
+/* -----------------------------------------------
+ * common
+  ---------------------------------------------- */
+
+body {
+    font-size: 14px;
+    font-family: "Noto Sans", "Noto Sans CJK JP", sans-serif;
+}
+
+.wrap {
+    overflow: hidden;
+    height: 100vh;
+}
+
+.container {
+    height: 100%;
+
+    &::after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+}
+
+/* -----------------------------------------------
+* module
+ ---------------------------------------------- */
+
+/* テーブル */
+
+table.table-normal {
+    width: 100%;
+
+    td {
+        border: solid 1px #9fcede;
+    }
+
+    th {
+        border: solid 1px #9fcede;
+        background: #e7f6fb;
+    }
+}
+
+/* ボタン */
+
+.customBtn {
+    background: #047298;
+    border: 1px solid #404040;
+    box-sizing: border-box;
+    color: #FFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Noto Sans", "Noto Sans CJK JP", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    min-width: 150px;
+    padding: 15px;
+    // height: 45px;
+    line-height: 1em;
+    transition: all 0.1s ease;
+    text-align: center;
+    vertical-align: middle;
+
+    &.back {
+        background: #FFF;
+        color: #404040;
+    }
+
+    &:hover {
+        opacity: .7;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+.red {
+    color:#ff3b3b;
+}
+
+.small {
+    font-size: 11px;
+}
+
+.bold {
+    font-weight: 600;
+}
+
+.bg-gray {
+    background: #ddd !important;
+}
+
+
+/* 必須 */
+.req {
+    background: #ff2323;
+    color: #FFF;
+    display: inline-block;
+    font-size: 11px;
+    padding: 0px 3px;
+}
+
+/* 見出し */
+
+.heading-01 {
+    background: #e7f6fb;
+    color: #047298;
+    margin-bottom: 35px;
+    padding: 8px 0;
+    text-align: center;
+}
+
+
+.mt-5 { margin-top: 5px; }
+.mr-5 { margin-right: 5px; }
+.mb-5 { margin-bottom: 5px; }
+.ml-5 { margin-left: 5px; }
+
+.mt-10 { margin-top: 10px; }
+.mr-10 { margin-right: 10px; }
+.mb-10 { margin-bottom: 10px; }
+.ml-10 { margin-left: 10px; }
+
+/* -----------------------------------------------
+* header
+ ---------------------------------------------- */
+
+.Header {
+    background: #047298;
+    height: $HeaderHeight;
+}
+
+.header-inner {
+    padding: 15px 40px;
+}
+
+.header-box {
+    position: relative;
+
+    .site-logo img {
+        width: 150px;
+    }
+
+    .site-name {
+        color: #FFF;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+    }
+}
+
+/* -----------------------------------------------
+* sidebar
+ ---------------------------------------------- */
+
+.sidebar {
+    background: #FFF;
+    border-right: solid 1px #9fcede;
+    box-sizing: border-box;
+    color: #333;
+    width: $SideWidth;
+    height: 100%;
+    float: left;
+}
+
+/* ログインユーザー情報 */
+
+.user-box {
+    padding: 35px 20px 25px;
+
+    .c-logo {
+        margin-bottom: 20px;
+        text-align: center;
+
+        img {
+            max-width: 215px;
+            max-height: 100px;
+        }
+    }
+}
+
+/* ナビメニュー */
+
+li.navi-item {
+    a {
+        background: #FFF;
+        border-top: solid 1px #ccc;
+        box-sizing: border-box;
+        color: #333;
+        display: block;
+        padding: 20px 0 20px 25px;
+        text-decoration: none;
+    }
+
+    &:last-of-type a {
+        border-bottom: solid 1px #ccc;
+    }
+
+    a {
+        &:hover {
+            background: #eee;
+        }
+
+        i {
+            color: #777;
+            margin-right: 15px;
+        }
+    }
+}
+
+/* -----------------------------------------------
+* footer
+ ---------------------------------------------- */
+
+.Footer {
+    background: #eee;
+    width: auto;
+    margin-bottom: 63px;
+}
+
+.footer-inner {
+    padding: 15px 0;
+}
+
+.copyright {
+    color: #777;
+    text-align: center;
+}
+
+/* -----------------------------------------------
+* other
+ ---------------------------------------------- */
+
+h2,
+h3,
+h4,
+table {
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: 21px;
+}
+
+th,
+td {
+    border: solid 1px #333;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 15px;
+    text-align: center;
+}
+
+th {
+    background: #ccc;
+    vertical-align: middle;
+}
+
+/* form */
+
+input {
+
+    &[type="text"],
+    &[type="email"],
+    &[type="tel"],
+    &[type="password"] {
+        border: solid 1px #ccc;
+        border-radius: 3px;
+        box-sizing: border-box;
+        font-size: 16px;
+        padding: 8px;
+        width: 100%;
+    }
+
+    &[type="radio"] {
+        cursor: pointer;
+        margin: 0 5px;
+    }
+}
+
+textarea {
+    @extend input[type="text"];
+}
+
+label {
+    cursor: pointer;
+}
+
+/* -----------------------------------------------
+* main
+ ---------------------------------------------- */
+
+.main {
+    width: calc(100% - #{$SideWidth});
+    height: calc(100% - #{$HeaderHeight});
+    float: left;
+    overflow: auto;
+}
+
+.content {
+    padding: 30px;
+}
+
+
+/* -----------------------------------------------
+* admin/index
+ ---------------------------------------------- */
+
+ .admin.main-login {
+    .table {
+        max-width: 500px;
+    }
+}
+
+
+/* -----------------------------------------------
+* user/index
+ ---------------------------------------------- */
+
+ .main-login {
+    .table {
+        max-width: 500px;
+    }
+}
+
+
+/* -----------------------------------------------
+* user/register
+ ---------------------------------------------- */
+
+.main-register {
+    .table {
+        max-width: 650px;
+
+        th {
+            width: 30%;
+        }
+    }
+}
+
+
+/* -----------------------------------------------
+* user/download
+ ---------------------------------------------- */
+
+.main-download  {
+    .ButtonE.ButtonE-pdf {
+        margin: 0 auto;
+        .pdfFormSubmit {
+            border-radius: 5px;
+        }
+    }
+}
+
+
+/* -----------------------------------------------
+* user/profile
+ ---------------------------------------------- */
+
+ .main-profile {
+    .table {
+        max-width: 650px;
+
+        th {
+            width: 30%;
+        }
+
+        td {
+            .f-clogo-img {
+                max-width: 180px;
+                max-height: 100px;
+            }
+        }
+    }
+}
+
+
+/* -----------------------------------------------
+* user/download
+ ---------------------------------------------- */
+
+ .main-staff {
+     .staff-add-box {
+        margin-bottom: 50px;
+
+        .table {
+            max-width: 650px;
+
+            th {
+                width: 30%;
+            }
+        }
+     }
+}
+
+
+/* -----------------------------------------------
+* user/contact
+ ---------------------------------------------- */
+
+.main-contact {
+    .table {
+        max-width: 650px;
+
+        th {
+            width: 30%;
+        }
+    }
+}
+
+
+/* -----------------------------------------------
+* user/building.php & user/mansion.php
+ ---------------------------------------------- */
+
+.LatestOffice_list {
+    margin-bottom: 45px;
+
+    .LatestOffice_cont {
+        margin-bottom: 10px;
+    }
+
+    .LatestOffice_thumb {
+        height: auto;
+        width: 50px;
+    }
+}
+
+.LatestOffice_thumb img {
+    border-radius: 5px;
+    width: 100%;
+}
+
+.LatestOffice_list {
+    .LatestOffice_info {
+        width: 100%;
+    }
+
+    .LatestOffice_InfoBuilding {
+        padding: 2px 15px 0 10px;
+    }
+
+    .LatestOffice_InfoAddress {
+        padding: 0;
+
+        &::before {
+            position: relative;
+            top: 4px;
+            left: 0;
+        }
+    }
+
+    .DetailBtn {
+        width: 220px;
+    }
+}
+
+.TopMenu_lists {
+    margin-bottom: 35px;
+
+    .TopMenu_list {
+        width: 16.666%;
+
+        a {
+            border: solid 1px #111;
+            border-left: none;
+            display: inline-block;
+            padding: 15px 0;
+            text-align: center;
+            width: 100%;
+
+            &:active {
+                background: #047298;
+                color: #ffffff;
+            }
+        }
+
+        &.active a {
+            background: #047298;
+            color: #fff;
+        }
+
+        &:first-child a {
+            border-left-color: #111;
+            border-left-style: solid;
+            border-left-width: 1px;
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .TopMenu_lists .TopMenu_list a {
+        border-bottom: none;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .TopMenu_lists .TopMenu_list:first-child a {
+        border-left: none;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .TopMenu_lists {
+        border-bottom-color: #111;
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+        border-left-color: #111;
+        border-left-style: solid;
+        border-left-width: 1px;
+    }
+}
+
+.LatestOffice_list .t_office th:last-child {
+    width: auto;
+}
+
+.btnCell {
+    .ButtonE {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .ButtonE-favorite {
+        width: 95%;
+    }
+
+    .ButtonE {
+
+        a,
+        &.ButtonE-pdf .pdfFormSubmit {
+            border-radius: 5px;
+        }
+    }
+}
+
+.searchSection {
+    margin: 30px auto;
+    td,td {
+        border: none;
+    }
+    input[type="text"] {
+        width: 35%;
+    }
+    .pull_list .list_canvas .ButtonA_op.ButtonA-theme_op a {
+        font-size: 16px;
+    }
+    @media screen and (max-width: 1200px) {
+        .pull_list .list_canvas {
+            padding: 0 2%;
+
+            .table_list table .op_icon {
+                width: 24.5%;
+            }
+
+            .ButtonA_op.ButtonA-theme_op a {
+                font-size: 14px;
+            }
+        }
+        .search_box {
+            width: 100% !important;
+        }
+    }
+}

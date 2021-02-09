@@ -1,0 +1,202 @@
+@charset "utf-8"
+
+
+/* ====================================================
+	
+	
+	
+	スタイルの初期化
+	
+	
+	
+====================================================*/
+html {
+	overflow-y: scroll;
+}
+
+body,div,ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,pre,form,p,blockquote,fieldset,input,textarea,th,td {
+	margin:0;
+	padding:0;
+}
+
+img {
+	border:none;
+	vertical-align:middle;
+}
+
+ul,ol {
+	list-style:none;
+}
+
+fieldset {
+	border:none;
+}
+
+caption {
+	text-align:left;
+}
+
+table {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+
+q:befor,q:after {
+	content:'';
+}
+
+abbr,acronym {
+	border:0;
+}
+
+ul, ol, li { zoom: normal; }
+
+/* ----------------------------------------------------
+	letter-spacingを使用した際、
+	<br>を2個書かないと改行しないのを解消
+---------------------------------------------------- */
+
+br { /*  */
+	letter-spacing:normal;
+}
+
+/* ----------------------------------------------------
+	1px Centering Fix
+---------------------------------------------------- */
+*:first-child+html body {
+ padding-left: 1px!important;
+}
+*html body {
+padding-left: 1px;
+}
+
+/* ====================================================
+	
+	creafixなどフロート解除関連
+	
+====================================================*/
+
+.clear {
+	clear: both;
+}
+
+/* ----------------------------------------------------
+	clearfix の代用
+	<div class="hr"><hr /></div>
+---------------------------------------------------- */
+
+div.hr { clear:both; }
+div.hr hr { display:none; }
+
+/* ----------------------------------------------------
+	clearfix
+---------------------------------------------------- */
+
+.clearfix{
+	zoom:1;
+}
+
+.clearfix:after{
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+	font-size: 0;
+	line-height: 0;
+	margin: -1px 0 0 0;
+}
+     /* for IE6 */  
+    * html .clearfix {  
+     display:inline-block;  
+     }
+     /* for IE7 */  
+     *+html .clear<span class="hilite">f</span>ix {  
+     display:inline-block;  
+     }  
+
+
+
+/* for MacIE5 \*//*/
+* html .clearfix {
+    height: 1%;
+}
+.clearfix {
+    display: block;
+}
+
+/* ====================================================
+	
+	
+	
+	フォントサイズの初期化
+	
+	EXAMPLES FONT-SIZE
+	------------------
+	 77% = 9px
+	 85% = 10px
+	 93% = 11px
+	100% = 12px
+	108% = 13px
+	116% = 14px
+	124% = 15px
+	131% = 16px
+	139% = 17px
+	147% = 18px
+	154% = 19px
+	162% = 20px
+	170% = 21px
+	177% = 22px
+	185% = 23px
+	193% = 24px
+	200% = 25px
+	---------------
+	
+	
+	
+====================================================*/
+html{
+	font-size:62.5%;
+}
+body {
+	*font-size: small;
+	*font: x-small;
+	_font-size:14px;
+	/*font-family: sans-serif;*/
+	line-height:1.5;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size:100%;
+}
+
+a , a:visited {
+	overflow: hidden;
+}
+
+em {
+	font-style:normal;
+}
+
+strong {
+	font-weight:bold;
+}
+
+table {
+	font-size:100%;
+	font-family:inherit;
+}
+
+
+
+/*-- supタグ関連　--*/
+sup{
+ vertical-align:text-top;
+}
+
+
+/*-- display  --*/
+
+.in_b{
+	display:inline-block;
+}
