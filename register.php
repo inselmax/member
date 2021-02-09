@@ -1,5 +1,5 @@
 <?php
-
+session_cache_limiter('public');
 @session_start();
 
 $Root = $_SERVER['DOCUMENT_ROOT'];
@@ -24,9 +24,12 @@ if( is_login() ) {
 // * VALIDATION
 // ----------------------------------------------------------
 
-$err = null;
-if( isset( $_GET['err'] ) ) {
-  $err = $_GET['err'];
+$form_data = null;
+
+if( !empty( $_POST ) ) {
+
+  $form_data = $_POST;
+
 }
 
  ?>
@@ -60,15 +63,19 @@ if( isset( $_GET['err'] ) ) {
        ?>
 
       <!-- main start -->
-      <div class="main main-login">
+      <div class="main main-register">
 
         <div class="content">
 
-          <h2 class="heading-01">仲介業者ログイン</h2>
+          <h2 class="heading-01">仲介業者登録フォーム</h2>
 
           <?php
-          // ログインフォームを出力
-          htmlUserLoginForm( $err );
+          // 仲介業者登録フォームを出力
+          if( isset( $form_data ) ) {
+            htmlCompanyAddForm2( $form_data );
+          }else {
+            htmlCompanyAddForm();
+          }
           ?>
 
         </div>

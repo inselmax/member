@@ -4,7 +4,7 @@
 
 $Root = $_SERVER['DOCUMENT_ROOT'];
 require_once( $Root . '/member/config.php' );
-require_once( $Root . '/member/func.php');
+require_once( $Root . '/member/func.php' );
 require_once( $Root . '/member/htmllib.php' );
 
 // ----------------------------------------------------------
@@ -12,27 +12,31 @@ require_once( $Root . '/member/htmllib.php' );
 // ----------------------------------------------------------
 
 // ログインチェック
-if( is_login() ) {
-  header('Location: /member/user/dashboard.php');
-  exit();
-}elseif( is_wksg_login() ) {
-  header('Location: /member/admin/dashboard.php');
+if( !is_admin_login() ) {
+  header('Location: /member/user/');
   exit();
 }
 
+
 // ----------------------------------------------------------
-// * VALIDATION
+// * DB
 // ----------------------------------------------------------
 
-$err = null;
-if( isset( $_GET['err'] ) ) {
-  $err = $_GET['err'];
-}
+// DB接続
+$pdo = dbConect();
+// ユーザーデータ取得
+$row = getUserData2( $pdo, $_SESSION['ID'] );
+// // ユーザーの数を取得
+$userCount = getAryCount( $row );
+// DB切断
+$pdo = null;
+
 
  ?>
 
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="utf-8">
   <title>仲介業者専用サイト│大阪市の貸ビル、賃貸オフィススペースの若杉</title>
@@ -43,6 +47,7 @@ if( isset( $_GET['err'] ) ) {
   ?>
 
 </head>
+
 <body>
 
   <!-- wrap start -->
@@ -60,22 +65,32 @@ if( isset( $_GET['err'] ) ) {
        ?>
 
       <!-- main start -->
-      <div class="main main-login">
+      <div class="main main-staff">
 
         <div class="content">
 
-          <h2 class="heading-01">仲介業者ログイン</h2>
+          <h2 class="heading-01">ユーザー管理</h2>
 
+          <div class="staff-add-box">
           <?php
-          // ログインフォームを出力
-          htmlUserLoginForm( $err );
+            // ユーザー登録フォーム出力
+            htmlUserAddForm( $userCount );
+          ?>
+          </div>
+
+          <h2 class="heading-01">登録ユーザー（最大5名）</h2>
+
+          <div class="staff-box">
+          <?php
+            // ユーザーテーブル出力
+            htmlUserDataTable2( $row );
           ?>
 
         </div>
 
         <?php
         require_once( $Root . '/member/assets/parts/footer.php');
-         ?>
+        ?>
 
       </div>
       <!-- main end -->
@@ -85,4 +100,5 @@ if( isset( $_GET['err'] ) ) {
   <!-- wrap end -->
 
 </body>
+
 </html>

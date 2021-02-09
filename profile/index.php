@@ -4,7 +4,7 @@
 
 $Root = $_SERVER['DOCUMENT_ROOT'];
 require_once( $Root . '/member/config.php' );
-require_once( $Root . '/member/func.php');
+require_once( $Root . '/member/func.php' );
 require_once( $Root . '/member/htmllib.php' );
 
 // ----------------------------------------------------------
@@ -12,22 +12,11 @@ require_once( $Root . '/member/htmllib.php' );
 // ----------------------------------------------------------
 
 // ログインチェック
-if( is_login() ) {
-  header('Location: /member/user/dashboard.php');
-  exit();
-}elseif( is_wksg_login() ) {
-  header('Location: /member/admin/dashboard.php');
+if( !is_login() ) {
+  header('Location: /member/user/');
   exit();
 }
 
-// ----------------------------------------------------------
-// * VALIDATION
-// ----------------------------------------------------------
-
-$err = null;
-if( isset( $_GET['err'] ) ) {
-  $err = $_GET['err'];
-}
 
  ?>
 
@@ -60,22 +49,33 @@ if( isset( $_GET['err'] ) ) {
        ?>
 
       <!-- main start -->
-      <div class="main main-login">
+      <div class="main main-profile">
 
         <div class="content">
-
-          <h2 class="heading-01">仲介業者ログイン</h2>
+          <h2 class="heading-01">登録情報</h2>
 
           <?php
-          // ログインフォームを出力
-          htmlUserLoginForm( $err );
+          // DB接続
+          $pdo = dbConect();
+
+          // 管理者
+          if( is_admin_login() ) {
+            $row = getSearchCompanyData( $pdo, $_SESSION['ID'] );
+            htmlCompanyProfile( $row );
+          }else {
+            $row = getSearchUserData( $pdo, $_SESSION['ID'] );
+            htmlUserProfile( $row );
+          }
+
+          // DB切断
+          $pdo = null;
           ?>
 
         </div>
 
         <?php
         require_once( $Root . '/member/assets/parts/footer.php');
-         ?>
+        ?>
 
       </div>
       <!-- main end -->
@@ -83,6 +83,8 @@ if( isset( $_GET['err'] ) ) {
     <!-- container end -->
   </div>
   <!-- wrap end -->
+
+  <script src="/member/assets/js/upload.js"></script>
 
 </body>
 </html>

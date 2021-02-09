@@ -4,7 +4,7 @@
 
 $Root = $_SERVER['DOCUMENT_ROOT'];
 require_once( $Root . '/member/config.php' );
-require_once( $Root . '/member/func.php');
+require_once( $Root . '/member/func.php' );
 require_once( $Root . '/member/htmllib.php' );
 
 // ----------------------------------------------------------
@@ -12,21 +12,9 @@ require_once( $Root . '/member/htmllib.php' );
 // ----------------------------------------------------------
 
 // ログインチェック
-if( is_login() ) {
-  header('Location: /member/user/dashboard.php');
+if( is_login() || is_wksg_login() ) {
+  header('Location: /member/user/index.php');
   exit();
-}elseif( is_wksg_login() ) {
-  header('Location: /member/admin/dashboard.php');
-  exit();
-}
-
-// ----------------------------------------------------------
-// * VALIDATION
-// ----------------------------------------------------------
-
-$err = null;
-if( isset( $_GET['err'] ) ) {
-  $err = $_GET['err'];
 }
 
  ?>
@@ -60,22 +48,21 @@ if( isset( $_GET['err'] ) ) {
        ?>
 
       <!-- main start -->
-      <div class="main main-login">
+      <div class="main">
 
         <div class="content">
-
-          <h2 class="heading-01">仲介業者ログイン</h2>
-
-          <?php
-          // ログインフォームを出力
-          htmlUserLoginForm( $err );
-          ?>
-
+          <h2 class="heading-01">登録申請完了</h2>
+          <div>
+            ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト<br>
+            ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト<br>
+            ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト<br>
+            ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト
+          </div>
         </div>
 
         <?php
         require_once( $Root . '/member/assets/parts/footer.php');
-         ?>
+        ?>
 
       </div>
       <!-- main end -->
