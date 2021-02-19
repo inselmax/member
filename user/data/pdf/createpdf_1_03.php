@@ -596,7 +596,7 @@ table {
                 <td style="width: 98mm;">
                   <table style="width: 98mm;" cellpadding="0">
                     <tr>
-                      <td align="left" style="width: 98mm;"><span class="s_text">※契約終了時に契約年数に応じて償却引きが発生。<br>※償却引き率：3年未満30%、10年未満20％、20年未満10％、20年以上無し</span></td>
+                      <td align="left" style="width: 98mm;"><span class="s_text">※契約終了時に契約年数に応じて償却引きが発生。<br>※償却引き率：3年未満30%、10年未満20％、15年未満15%、20年未満10％、20年以上無し</span></td>
                     </tr>
                   </table>
                 </td>
@@ -707,9 +707,9 @@ table {
         </tr>
         <tr>
           <td>
-            <table style="width: 101mm;" cellpadding="1" cellspacing="1">
+            <table style="width: 132mm;" cellpadding="0" cellspacing="1">
               <tr>
-                <td class="s_text">※契約時のみ発生します。1階テナント案内板、ポスト、貸室ドアに社名を表記します。<br>※専用ロゴを作成する場合は、使用カラー、ロゴ形態によって別途費用が必要になります。</td>
+                <td class="s_text">※契約時のみ発生します。但し、貸借人都合による再作成は、同費用が必要となります。1階テナント案内板、ポスト、貸室ドアに社名を表記します。<br>※専用ロゴを作成する場合は、使用カラー、ロゴ形態によって別途費用が必要になります。</td>
               </tr>
             </table>
           </td>
@@ -738,7 +738,7 @@ table {
                 <th align="center" class="bg_gray" style="width: 33mm;">
                   <table cellpadding="3">
                     <tr>
-                      <td>テナント総合保険</td>
+                      <td>火災保険（要加入）</td>
                     </tr>
                   </table>
                 </th>
@@ -801,7 +801,7 @@ table {
                 <td style="width: 98mm;">
                   <table style="width: 98mm;" cellpadding="2">
                     <tr>
-                      <td align="left" style="width: 98mm;">毎月メーター検討を使い、賃料等と併せてご請求</td>
+                      <td align="left" style="width: 98mm;">毎月メーター検針を使い、賃料等と併せてご請求</td>
                     </tr>
                   </table>
                 </td>
@@ -853,7 +853,7 @@ table {
         </tr>
         <tr>
           <td>
-            <table style="width: 132mm;" cellpadding="1" cellspacing="1">
+            <table style="width: 132mm;" cellpadding="0" cellspacing="1">
               <tr>
                 <td class="s_text">※入出庫可能時間：月曜～土曜7:30～21:30　日曜・祝日・お盆・年末年始は入出庫不可<br>※サイズ：高さ1,550mm × 車幅1,750mm × 全長5,050mm 重量1,600kg</td>
               </tr>
@@ -927,7 +927,7 @@ table {
                 <td style="width: 98mm;">
                   <table style="width: 98mm;" cellpadding="1">
                     <tr>
-                      <td align="left" style="width: 98mm;">床タイルカーペット張替え、天井・壁面塗装塗り替え(又はクロス張替え)、<br>扉枠・窓面カウンター等のと塗装関係等、現状回復に掛かる費用は退去時<br>賃借人様ご負担となります。</td>
+                      <td align="left" style="width: 96mm;">損耗にかかわらず、床タイルカーペット張替、天井・壁面塗装（又は、クロス張替）、扉枠、窓面カウンター塗装、等の現状回復費用は、退去時貸借人様ご負担となります。</td>
                     </tr>
                   </table>
                 </td>
@@ -945,7 +945,7 @@ table {
             <table border="1" cellpadding="1" style="width: 132mm;">
               <tr>
                 <th align="center" class="bg_gray" style="width: 33mm;">
-                  <table cellpadding="6">
+                  <table cellpadding="10">
                     <tr>
                       <td>ビル開館時間</td>
                     </tr>
@@ -954,7 +954,7 @@ table {
                 <td style="width: 98mm;">
                   <table style="width: 98mm;" cellpadding="1">
                     <tr>
-                      <td align="left" style="width: 98mm;">月曜～土曜　7:30～21:30　時間外・日曜・祝日・お盆・年末年始は<br>セキュリティカードにて出入りは可能です。</td>
+                      <td align="left" style="width: 98mm;">月曜～土曜　7:30～21:30<br>時間外・日曜・祝日・お盆・年末年始はセキュリティカードにて出入りは<br>可能です。</td>
                     </tr>
                   </table>
                 </td>
@@ -1008,8 +1008,8 @@ table {
                 </td>
               </tr>
               <tr>
-                <th rowspan="3" align="center" class="bg_gray" style="width: 33mm;">
-                  <table cellpadding="16">
+                <th rowspan="2" align="center" class="bg_gray" style="width: 33mm;">
+                  <table cellpadding="8">
                     <tr>
                       <td>セキュリティ</td>
                     </tr>
@@ -1018,7 +1018,7 @@ table {
                 <td style="width: 98mm;">
                   <table style="width: 98mm;" cellpadding="1">
                     <tr>
-                      <td align="left" style="width: 98mm;">管理人常駐による警備（月～土7:30～18:00　日祝休）</td>
+                      <td align="left" style="width: 101mm;">管理人常駐による警備（月～土7:30～18:00　日祝休）<span class="s_text">※ビルにより、巡回警備</span></td>
                     </tr>
                   </table>
                 </td>
@@ -1027,19 +1027,10 @@ table {
                 <td style="width: 98mm;">
                   <table style="width: 98mm;" cellpadding="1">
                     <tr>
-                      <td align="left" style="width: 98mm;">セコムによる機械警備及び</td>
+                      <td align="left" style="width: 101mm;">セコムによる機械警備及びビル共有部防犯カメラ</td>
                     </tr>
                   </table>
                   </td>
-              </tr>
-              <tr>
-                <td style="width: 98mm;">
-                  <table style="width: 98mm;" cellpadding="1">
-                    <tr>
-                      <td align="left" style="width: 98mm;">ビル共有部防犯カメラ</td>
-                    </tr>
-                  </table>
-                </td>
               </tr>
               <tr>
                 <th align="center" class="bg_gray" style="width: 33mm;">
@@ -1068,7 +1059,7 @@ table {
                 <td style="width: 98mm;">
                   <table style="width: 98mm;" cellpadding="1">
                     <tr>
-                      <td align="left" style="width: 98mm;">全館禁煙（室内含む）電子タバコはご利用いただけますが、<br>灰皿の設置はございません。</td>
+                      <td align="left" style="width: 98mm;">室内を含み、全館禁煙です。<br>※電子タバコはご利用いただけます。</td>
                     </tr>
                   </table>
                 </td>
@@ -1094,7 +1085,7 @@ table {
           <td>
             <table border="1" cellpadding="4">
               <tr>
-                <td align="left" style="width: 132mm;">法人：①会社謄本②印鑑証明書<br>個人：①住民票②印鑑証明書③収入証明（源泉徴収票、市町村が発行する課税証明書など）</td>
+                <td align="left" style="width: 132mm;">法人：①会社謄本②印鑑証明書③決算書（直近）<br>個人：①住民票②印鑑証明書③収入証明（源泉徴収票、市町村が発行する課税証明書など）</td>
               </tr>
             </table>
           </td>
