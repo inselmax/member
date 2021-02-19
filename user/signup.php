@@ -34,6 +34,12 @@ if ( $_POST['name'] == '' ) {
   return false;
 }
 
+// 屋号
+if ( $_POST['shop'] == '' ) {
+  echo '屋号が入力されていません。';
+  return false;
+}
+
 // 住所
 if ( $_POST['address'] == '' ) {
   echo '住所が入力されていません。';
@@ -46,9 +52,21 @@ if ( $_POST['tel'] == '' ) {
   return false;
 }
 
-// 担当者名
+// FAX
+if ( $_POST['fax'] == '' ) {
+  echo 'FAXが入力されていません。';
+  return false;
+}
+
+// 責任者氏名
 if ( $_POST['pic_name'] == '' ) {
-  echo '担当者名が入力されていません。';
+  echo '責任者氏名が入力されていません。';
+  return false;
+}
+
+// 宅建免許番号
+if ( $_POST['license'] == '' ) {
+  echo '責任者氏名が入力されていません。';
   return false;
 }
 
@@ -107,7 +125,7 @@ if( $row > 0 || $row2 > 0 ) {
 }else {
 
   // DBに登録
-  insertCompanyData( $pdo, $_POST['name'], $_POST['address'], $_POST['tel'], $_POST['pic_name'], $_POST['type'], $_POST['email'], $password );
+  insertCompanyData( $pdo, $_POST['name'], $_POST['shop'], $_POST['address'], $_POST['tel'], $_POST['fax'], $_POST['pic_name'], $_POST['license'], $_POST['type'], $_POST['email'], $password );
 
   // DB切断
   $pdo = null;

@@ -220,10 +220,13 @@ function htmlCompanyProfile( $ary ) {
             </td>
           </tr>';
       echo '<tr><th>会社名</th><td><input type="text" name="name" value="' . escStr( $ary['name'] ) . '"></td></tr>';
+      echo '<tr><th>屋号</th><td><input type="text" name="shop" value="' . escStr( $ary['shop'] ) . '"></td></tr>';
       echo '<tr><th>住所</th><td><input type="text" name="address" value="' . escStr( $ary['address'] ) . '"></td></tr>';
       echo '<tr><th>電話番号</th><td><input type="tel" name="tel" value="' . escStr( $ary['tel'] ) . '"></td></tr>';
+      echo '<tr><th>FAX</th><td><input type="tel" name="fax" value="' . escStr( $ary['fax'] ) . '"></td></tr>';
       echo '<tr><th>メールアドレス</th><td><input type="email" name="email" value="' . escStr( $ary['email'] ) . '"></td></tr>';
       echo '<tr><th>責任者氏名</th><td><input type="text" name="pic_name" value="' . escStr( $ary['pic_name'] ) . '"></td></tr>';
+      echo '<tr><th>宅建免許番号</th><td><input type="text" name="license" value="' . escStr( $ary['license'] ) . '"></td></tr>';
       echo '<tr><th>取扱物件</th><td>';
         if( $ary['type'] == 1 ) {
           echo 'ビル';
@@ -284,9 +287,12 @@ function htmlCompanyAddForm() {
       <p class="mb-10">※下記フォーム全てご入力の上ご申請ください。</p>
       <table class="table table-normal">
         <tr><th>会社名</th><td><input type="text" name="name" placeholder="株式会社スペースソリューション"></td></tr>
+        <tr><th>屋号</th><td><input type="text" name="shop" placeholder=""></td></tr>
         <tr><th>住所</th><td><input type="text" name="address" placeholder="大阪市北区東天満2丁目9番1号"></td></tr>
         <tr><th>電話番号</th><td><input type="tel" name="tel" pattern="[\d\-]*" placeholder="06-6357-7771"></td></tr>
+        <tr><th>FAX</th><td><input type="tel" name="fax" pattern="[\d\-]*" placeholder="06-6357-7772"></td></tr>
         <tr><th>責任者氏名</th><td><input type="text" name="pic_name" placeholder="若杉太郎"></td></tr>
+        <tr><th>宅建免許番号</th><td><input type="text" name="license" placeholder="大阪府知事(1)第00000号"></td></tr>
         <tr><th>取扱物件</th>
           <td>
             <label><input type="radio" name="type" value="1" checked="checked">ビル</label>　
@@ -329,6 +335,11 @@ function htmlCompanyAddForm2( $post_data = null ) {
     $err["name"] = '<p class="red small mt-5">会社名が入力されていません</p>';
   }
 
+  // 会社名
+  if( $post_data["shop"] == "" ) {
+    $err["shop"] = '<p class="red small mt-5">屋号が入力されていません</p>';
+  }
+
   // 住所
   if( $post_data["address"] == "" ) {
     $err["address"] = '<p class="red small mt-5">住所が入力されていません</p>';
@@ -339,9 +350,19 @@ function htmlCompanyAddForm2( $post_data = null ) {
     $err["tel"] = '<p class="red small mt-5">電話番号が入力されていません</p>';
   }
 
+  // FAX
+  if( $post_data["fax"] == "" ) {
+    $err["fax"] = '<p class="red small mt-5">FAXが入力されていません</p>';
+  }
+
   // 責任者氏名
   if( $post_data["pic_name"] == "" ) {
     $err["pic_name"] = '<p class="red small mt-5">責任者氏名が入力されていません</p>';
+  }
+
+  // 宅建免許番号
+  if( $post_data["license"] == "" ) {
+    $err["license"] = '<p class="red small mt-5">宅建免許番号が入力されていません</p>';
   }
 
   // 取扱物件
@@ -387,9 +408,12 @@ function htmlCompanyAddForm2( $post_data = null ) {
         <p class="mb-10">※下記フォーム全てご入力の上ご申請ください。</p>
         <table class="table table-normal">
           <tr><th>会社名</th><td><input type="text" name="name" value="' . escStr( $post_data["name"] ) . '">' . $err["name"] . '</td></tr>
+          <tr><th>屋号</th><td><input type="text" name="shop" value="' . escStr( $post_data["shop"] ) . '">' . $err["shop"] . '</td></tr>
           <tr><th>住所</th><td><input type="text" name="address" value="' . escStr( $post_data["address"] ) . '">' . $err["address"] . '</td></tr>
           <tr><th>電話番号</th><td><input type="tel" name="tel" pattern="[\d\-]*" value="' . escStr( $post_data["tel"] ) . '">' . $err["tel"] . '</td></tr>
+          <tr><th>FAX</th><td><input type="tel" name="fax" pattern="[\d\-]*" value="' . escStr( $post_data["fax"] ) . '">' . $err["fax"] . '</td></tr>
           <tr><th>責任者氏名</th><td><input type="text" name="pic_name" value="' . escStr( $post_data["pic_name"] ) . '">' . $err["pic_name"] . '</td></tr>
+          <tr><th>宅建免許番号</th><td><input type="text" name="pic_name" value="' . escStr( $post_data["license"] ) . '">' . $err["license"] . '</td></tr>
           <tr><th>取扱物件</th>
             <td>
               <label class="mr-5"><input type="radio" name="type" value="1" '. $radio_01 .'>ビル</label>
@@ -424,9 +448,12 @@ function htmlCompanyAddForm2( $post_data = null ) {
         <p class="mb-10">※下記フォーム全てご入力の上ご申請ください。</p>
         <table class="table table-normal">
           <tr><th>会社名</th><td><input type="hidden" name="name" value="' . escStr( $post_data["name"] ) . '">' . escStr( $post_data["name"] ) . '</td></tr>
+          <tr><th>屋号</th><td><input type="hidden" name="shop" value="' . escStr( $post_data["shop"] ) . '">' . escStr( $post_data["shop"] ) . '</td></tr>
           <tr><th>住所</th><td><input type="hidden" name="address" value="' . escStr( $post_data["address"] ) . '">' . escStr( $post_data["address"] ) . '</td></tr>
           <tr><th>電話番号</th><td><input type="hidden" name="tel" value="' . escStr( $post_data["tel"] ) . '">' . escStr( $post_data["tel"] ) . '</td></tr>
+          <tr><th>FAX</th><td><input type="hidden" name="fax" value="' . escStr( $post_data["fax"] ) . '">' . escStr( $post_data["fax"] ) . '</td></tr>
           <tr><th>責任者氏名</th><td><input type="hidden" name="pic_name" value="' . escStr( $post_data["pic_name"] ) . '">' . escStr( $post_data["pic_name"] ) . '</td></tr>
+          <tr><th>宅建免許番号</th><td><input type="hidden" name="license" value="' . escStr( $post_data["license"] ) . '">' . escStr( $post_data["license"] ) . '</td></tr>
           <tr><th>取扱物件</th><td><input type="hidden" name="type" value="' . escStr( $post_data["type"] ) . '">' . $radio_name . '</td>
           </tr>
           <tr><th>メールアドレス</th><td><input type="hidden" name="email" value="' . escStr( $post_data["email"] ) . '">' . escStr( $post_data["email"] ) . '</td></tr>

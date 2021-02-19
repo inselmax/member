@@ -35,6 +35,12 @@ if ( $_POST['name'] == '' ) {
     return false;
 }
 
+// 屋号
+if ( $_POST['shop'] == '' ) {
+    echo '屋号が入力されていません。';
+    return false;
+}
+
 // 住所
 if ( $_POST['address'] == '' ) {
     echo '住所が入力されていません。';
@@ -47,9 +53,21 @@ if ( $_POST['tel'] == '' ) {
     return false;
 }
 
+// FAX
+if ( $_POST['fax'] == '' ) {
+    echo 'FAXが入力されていません。';
+    return false;
+}
+
 // 責任者氏名
 if ( $_POST['pic_name'] == '' ) {
     echo '担当者名が入力されていません。';
+    return false;
+}
+
+// 宅建免許番号
+if ( $_POST['license'] == '' ) {
+    echo '宅建免許番号が入力されていません。';
     return false;
 }
 
@@ -94,7 +112,7 @@ if ( password_verify($_POST['password'], $row['password']) ) {
 
 // データを更新
 // 1 => $_POST['rate']
-updateCompanyProfile( $pdo, $_SESSION['ID'], $_POST['name'], $_POST['address'], $_POST['tel'], $_POST['email'], $_POST['pic_name'], 1, $_POST['logo_path'] );
+updateCompanyProfile( $pdo, $_SESSION['ID'], $_POST['name'], $_POST['shop'], $_POST['address'], $_POST['tel'], $_POST['fax'], $_POST['email'], $_POST['pic_name'], $_POST['license'], 1, $_POST['logo_path'] );
 // updateCompanyStatus( $pdo, $user_id );
 
 // DB切断

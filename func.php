@@ -160,20 +160,26 @@ function deleteUserData2( $db, $company_id ) {
 // insert into  company
 // $db DBインスタンス
 // $nameフォームから送信された会社名（name）
+// $shopフォームから送信された屋号（shop）
 // $address フォームから送信された住所（address）
-// $tel フォームから送信された電話番号（address）
+// $tel フォームから送信された電話番号（tel）
+// $fax フォームから送信されたFAX（fax）
 // $pic_name フォームから送信された担当者名（pic_name）
+// $license フォームから送信された宅建免許番号（license）
 // $type フォームから送信された取扱物件（type）
 // $email フォームから送信されたメールアドレス（email）
 // $password フォームから送信されたハッシュ化済みのパスワード（password）
-function insertCompanyData( $db, $name, $address, $tel, $pic_name, $type, $email, $password ) {
+function insertCompanyData( $db, $name, $shop, $address, $tel, $fax, $pic_name, $license, $type, $email, $password ) {
 
-  $stmt = $db->prepare("insert into company(name, address, tel, pic_name, type, email, password) value(:name, :address, :tel, :pic_name, :type, :email, :password)");
+  $stmt = $db->prepare("insert into company(name, shop, address, tel, fax, pic_name, license, type, email, password) value(:name, :shop, :address, :tel, :fax, :pic_name, :license, :type, :email, :password)");
   $stmt->execute(array(
     ':name' => $name,
+    ':shop' => $shop,
     ':address' => $address,
     ':tel' => $tel,
+    ':fax' => $fax,
     ':pic_name' => $pic_name,
+    ':license' => $license,
     ':type' => $type,
     ':email' => $email,
     ':password' => $password
@@ -220,23 +226,29 @@ function updateCompanyStatus( $db, $id ) {
 // update
 // $db DBインスタンス
 // $id フォームから送信されたユーザーID（id）
-// $name フォームから送信された会社名（id）
-// $address フォームから送信された住所（id）
+// $name フォームから送信された会社名（name）
+// $shop フォームから送信された屋号（shop）
+// $address フォームから送信された住所（address）
 // $tel フォームから送信されたユーザー電話番号（tel）
-// $email フォームから送信されたユーザーメールアドレス（id）
-// $pic_name フォームから送信されたユーザー責任者氏名（id）
-// $rate フォームから送信されたユーザー割引率（id）
+// $fax フォームから送信されたユーザーFAX（fax）
+// $email フォームから送信されたユーザーメールアドレス（email）
+// $pic_name フォームから送信されたユーザー責任者氏名（pic_name）
+// $license フォームから送信されたユーザー宅建免許番号（license）
+// $rate フォームから送信されたユーザー割引率（rate）
 // $logo_path フォームから送信された会社ロゴのディレクトリパス（logo_path）
-function updateCompanyProfile( $db, $id, $name, $address, $tel, $email, $pic_name, $rate, $logo_path ) {
+function updateCompanyProfile( $db, $id, $name, $shop, $address, $tel, $fax, $email, $pic_name, $license, $rate, $logo_path ) {
 
-  $stmt = $db->prepare("update company set name = :name, address = :address, tel = :tel, email = :email, pic_name = :pic_name, rate = :rate, logo_path = :logo_path where id = :id");
+  $stmt = $db->prepare("update company set name = :name, shop = :shop, address = :address, tel = :tel, fax = :fax, email = :email, pic_name = :pic_name, license = :license, rate = :rate, logo_path = :logo_path where id = :id");
   $stmt->execute(array(
     ':id' => $id,
     ':name' => $name,
+    ':shop' => $shop,
     ':address' => $address,
     ':tel' => $tel,
+    ':fax' => $fax,
     ':email' => $email,
     ':pic_name' => $pic_name,
+    ':license' => $license,
     ':rate' => $rate,
     ':logo_path' => $logo_path
   ));
@@ -472,12 +484,18 @@ function getMailTempSignup( $formData, $admin ) {
     $mail_content .= "\r\n";
     $mail_content .= "【会社名】\r\n";
     $mail_content .= escStr($formData['name']) ."\r\n";
+    $mail_content .= "【屋号】\r\n";
+    $mail_content .= escStr($formData['shop']) ."\r\n";
     $mail_content .= "【住所】\r\n";
     $mail_content .= escStr($formData['address']) ."\r\n";
     $mail_content .= "【電話番号】\r\n";
     $mail_content .= escStr($formData['tel']) ."\r\n";
+    $mail_content .= "【FAX】\r\n";
+    $mail_content .= escStr($formData['fax']) ."\r\n";
     $mail_content .= "【責任者氏名】\r\n";
     $mail_content .= escStr($formData['pic_name']) ."\r\n";
+    $mail_content .= "【宅建免許番号】\r\n";
+    $mail_content .= escStr($formData['license']) ."\r\n";
     $mail_content .= "【メールアドレス】\r\n";
     $mail_content .= escStr($formData['email']) ."\r\n";
 
