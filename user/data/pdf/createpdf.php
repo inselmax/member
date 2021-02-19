@@ -509,23 +509,24 @@ $html = <<< EOF
     <!-- / 左サイド -->
     <!-- 帯 -->
     <td colspan="2" bgcolor="#047298">
-      <table border="0" width="" cellspacing="0" cellpadding="3" class="white">
+      <table border="0" width="585" cellspacing="0" cellpadding="3" class="white">
         <tr bgcolor="#047298">
-          <td width="460" align="left">
+          <th width="460" align="left">
             <table border="0" cellspacing="0" cellpadding="0">
-              <tr>
-                <th class="tit01" width="235">{$bldg_name}</th>
-                <td class="tit02" width="100" valign="bottom">フロア：{$office_kai}F</td>
-                <td class="tit02" width="125" valign="bottom">契約面積：{$office_tsubo}坪</td>
+              <tr width="460">
+                <th class="tit01" width="180">{$bldg_name}</th>
+                <td class="tit02" width="80">フロア：{$office_kai}F</td>
+                <td class="tit02" width="90">号室：1102-1</td>
+                <td class="tit02" width="110">契約面積：{$office_tsubo}坪</td>
               </tr>
-              <tr>
-                <th colspan="3" class="tit04">{$bldg_address}</th>
+              <tr width="460">
+                <th class="tit04" colspan="4">{$bldg_address}</th>
               </tr>
             </table>
-          </td>
+          </th>
           <td width="130" align="center">
             <table border="0" cellspacing="0" cellpadding="2">
-              <tr bgcolor="#fff" width="110">
+              <tr bgcolor="#fff" width="130">
                 <th class="tit04">
                   <font color="#000">物件ID：{$office_id}</font>
                 </th>
@@ -559,15 +560,15 @@ $html = <<< EOF
         </tr>
         <tr>
           <th align="left">賃料</th>
-          <td align="left">{$p_chinryo}</td>
+          <td align="left">{$p_chinryo}（税別）</td>
         </tr>
         <tr bgcolor="#e1f0f5">
           <th align="left">共益費</th>
-          <td align="left" width="190">{$p_kyoekihi}</td>
+          <td align="left" width="190">{$p_kyoekihi}（税別）</td>
         </tr>
         <tr>
           <th align="left">賃料合計</th>
-          <td align="left">{$p_total}</td>
+          <td align="left">{$p_total}（税別）</td>
         </tr>
         <tr bgcolor="#e1f0f5">
           <th align="left">保証金・敷金</th>
@@ -653,30 +654,34 @@ $html = <<< EOF
     <table border="0" cellspacing="0" cellpadding="0">
       <tr>
         <td width="780" colspan="3" valign="top" class="line-top">
-
         </td>
       </tr>
       <tr>
         <td width="50">
           <img src="/member/user/data/upload/{$company_logo}" alt="logo" height="30px">
         </td>
-        <td width="250" valign="top">
+        <td width="150" valign="top">
           <table border="0" cellspacing="0" cellpadding="1">
             <tr>
               <th class="tit03">{$company_name}</th>
             </tr>
             <tr>
-              <td width="240">{$company_address}</td>
+              <td width="150">{$company_address}</td>
             </tr>
           </table>
         </td>
-        <td width="250" align="left">
+        <td width="180" valign="top"　align="left">
           <table border="0" cellspacing="0" cellpadding="1">
             <tr>
-              <td>TEL:{$company_tel}</td>
+              <th class="tit03" colspan="2">靱本町店</th>
+            </tr>
+            <tr>
+              <td width="90">TEL:{$company_tel}</td>
+              <td width="90">FAX:0661314815</td>
             </tr>
           </table>
         </td>
+        <td class="tit03" width="170">大阪府知事(１)第１２３４５号</td>
         <td width="230" align="right">
           契約条件については弊社担当者までお問い合わせください。<br>図面現況が異なる場合は、現況を優先させていただきます。
         </td>
