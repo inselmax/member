@@ -52,8 +52,11 @@ if( isset($_SESSION['ADMIN']) ) {
   $row_data = getSearchCompanyData( $pdo, $company_id );
 
   $company_name = $row_data['name']; // 会社名
+  $company_shop = $row_data['shop']; // 屋号
   $company_address = $row_data['address']; // 住所
   $company_tel = $row_data['tel']; // 電話番号
+  $company_fax = $row_data['fax']; // FAX
+  $company_license = $row_data['license']; // 宅建免許番号
   $company_logo = $row_data['logo_path']; // 会社ロゴ
   $company_rate = $row_data['rate']; // 割引率
 
@@ -181,6 +184,7 @@ $bldg_map = "";
 $office_id = "";
 $office_link = "";
 $office_kai = "";
+$office_gou = "";
 $office_tsubo = "";
 $office_status = "";
 $office_outline = "";
@@ -350,12 +354,18 @@ if ( !empty($_POST['office_id']) && strlen($_POST['office_id']) == 7 ) {
   $bldg_map = $area_data_arr[$bldg_id]['map'];
 
   $office_kai = $data_office['gsx$階数']['$t'];
+  $office_gou = ltrim(substr( $office_id, 2, 4 ), '0');
   $office_tsubo = $data_office['gsx$契約面積坪']['$t'];
   $office_status = $data_office['gsx$状態入居予定時期']['$t'];
   $office_outline = $data_office['gsx$室内図面url']['$t'];
   $office_date = $data_office['gsx$登録日']['$t'];
   $office_update_at = $data_office['gsx$最終更新日']['$t'];
   $office_other = $data_office['gsx$備考']['$t'];
+
+  // 号室
+  if( $data_office['gsx$連結']['$t'] != "" && $data_office['gsx$連結']['$t'] != "0" ) {
+    $office_gou = $office_gou . " - " . $data_office['gsx$連結']['$t'];
+  }
 
   // 賃料
   $chinryo = $data_office['gsx$賃料坪単価']['$t'];
@@ -673,15 +683,15 @@ $html = <<< EOF
         <td width="180" valign="top"　align="left">
           <table border="0" cellspacing="0" cellpadding="1">
             <tr>
-              <th class="tit03" colspan="2">靱本町店</th>
+              <th class="tit03" colspan="2">{$company_shop}</th>
             </tr>
             <tr>
               <td width="90">TEL:{$company_tel}</td>
-              <td width="90">FAX:0661314815</td>
+              <td width="90">FAX:{$company_fax}</td>
             </tr>
           </table>
         </td>
-        <td class="tit03" width="170">大阪府知事(１)第１２３４５号</td>
+        <td class="tit03" width="170">{$company_license}</td>
         <td width="230" align="right">
           契約条件については弊社担当者までお問い合わせください。<br>図面現況が異なる場合は、現況を優先させていただきます。
         </td>
