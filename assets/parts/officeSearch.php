@@ -12,4 +12,7 @@ htmlSearchForm_01($form_data);
 // こだわり検索
 htmlSearchForm_02($form_data);
 
+// テーマ検索
+htmlSearchForm_03($form_data);
+
 ?>
