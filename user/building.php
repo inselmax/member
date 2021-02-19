@@ -94,6 +94,64 @@ if( $office_flg == 2 ) {
       })
 		});
 
+    // エリアチェック
+    function inputCheck( $_this, $_formId ) {
+      // オブジェクトを格納
+      var $_input = $_this.children('input');;
+      // 値を格納
+      var areaVal = $_input.val();
+      // 状態を格納
+      var isChecked = $_input.prop('checked');
+      // チェック済みの要素を配列に格納（南森町～京橋）
+      var checkedList = $($_formId + ' [class="area_item_input"]:checked').map(function(){ return $(this).val(); }).get();
+      // チェックをカウント
+      var countNum = checkedList.length;
+
+      // 分岐処理
+      if( areaVal === "all" ) {
+        if( isChecked ) {
+          $($_formId + " .area_label.area_item input[type='checkbox']").prop("checked", true);
+        }else {
+          $($_formId + " .area_label.area_item input[type='checkbox']").prop("checked", false);
+        }
+      }else {
+        // 全部にチェックが入っていれば全エリアにチェックを入れる
+        if( countNum > 5 ) {
+          $($_formId + " .area_label.area_all input[type='checkbox']").prop("checked", true);
+        }else {
+          $($_formId + " .area_label.area_all input[type='checkbox']").prop("checked", false);
+        }
+      }
+    }
+
+    $(function(){
+      // 簡単検索のエリアクリックイベント
+      $("#form_kantan .area_label").on('click', function(){
+        inputCheck( $(this), "#form_kantan" );
+      });
+
+      // こだわり検索のエリアクリックイベント
+      $("#form_kodawari .area_label").on('click', function(){
+        inputCheck( $(this), "#form_kodawari" );
+      });
+
+      $('#resetBtn').on('click', function() {
+				$('.SearchBy_cont-kodawari .office_option_input').prop('checked', false);
+			});
+
+			//アコーディオン
+			$('.search_subttl.search_subttl-acco').on('click', function() {
+				var $_target = $(this).next();
+				if (!$(this).hasClass('active')) {
+					$(this).addClass('active');
+					$_target.slideDown();
+				} else {
+					$(this).removeClass('active');
+					$_target.slideUp();
+				}
+		  });
+
+		});
     </script>
 
 </head>
@@ -416,114 +474,6 @@ if( $office_flg == 2 ) {
     setBukkenData('08');
     setBukkenData('09');
     setBukkenData('10');
-
-    $(document).ready(function() {
-      // ---------------検索 start-------------------
-      $(".pull_link").click(function() {
-        $("#pull_canvas").slideToggle("slow");
-        if ($("#pull_canvas").data("mark") == "0") {
-          $(".pull_link").addClass('push_link');
-          $("#pull_canvas").data("mark", "1")
-        } else {
-          $(".pull_link").removeClass('push_link');
-          $("#pull_canvas").data("mark", "0")
-        }
-      });
-
-      // ---------------検索 end-------------------
-
-      // ---------------検索のページ start-------------------
-
-      $(".page_button").click(function() {
-        var p_href = $(this).attr("href");
-        var list = get_parameter();
-        for (var item in list) {
-          if (item != "page" && item != "type") {
-            p_href += "&" + item + "=" + list[item];
-          }
-        }
-        p_href += "#bukken_mark";
-        $(this).attr("href", p_href);
-      });
-      // ---------------検索のページ end-------------------
-
-      // ---------------検索のチェック use start-------------------
-      $(".op_icon.use p a").click(function() {
-        if ($(this).attr('class') == "checked") {
-          $(this).removeClass('checked');
-        } else {
-          $(this).addClass('checked');
-        }
-      });
-      // ---------------検索のチェック end-------------------
-
-      // ---------------検索のページ option start-------------------
-
-      $(".op_icon.option p a").click(function() {
-        if ($(this).attr('class') == "checked") {
-          $(this).removeClass('checked');
-          if ($(this).data('cate') == '1') {
-            var op_one = [];
-            op_one = $('#option_one').attr('value').split(",");
-            for (var item in op_one) {
-              if (op_one[item] == $(this).data('val')) {
-                op_one.splice(item, 1);
-                break;
-              }
-            }
-            $("#option_one").attr("value", op_one.join(","));
-            //alert($('#option_one').attr('value'));
-          }
-
-          if ($(this).data('cate') == '2') {
-            var op_two = [];
-            op_two = $('#option_two').attr('value').split(",");
-            for (var item in op_two) {
-              if (op_two[item] == $(this).data('val')) {
-                op_two.splice(item, 1);
-                break;
-              }
-            }
-            $("#option_two").attr("value", op_two.join(","));
-            //alert($('#option_two').attr('value'));
-          }
-        } else {
-          $(this).addClass('checked');
-          if ($(this).data('cate') == '1') {
-            var op_one = [];
-            if ($('#option_one').attr('value') != "") {
-              op_one = $('#option_one').attr('value').split(",");
-            }
-            op_one.push($(this).data('val'));
-            $("#option_one").attr("value", op_one.join(","));
-            //alert($('#option_one').attr('value'));
-          }
-
-          if ($(this).data('cate') == '2') {
-            var op_two = [];
-            if ($('#option_two').attr('value') != "") {
-              op_two = $('#option_two').attr('value').split(",");
-            }
-            op_two.push($(this).data('val'));
-            $("#option_two").attr("value", op_two.join(","));
-            //alert($('#option_two').attr('value'));
-          }
-        }
-      });
-      // ---------------検索のページ end-------------------
-
-      // ---------------条件をクリア start-----------------
-      $( "#bSearchResetBtn" ).click( function () {
-        $( '#pull_canvas input[type="text"]' ).val('');
-        $("#pull_canvas .op_icon p a.checked").removeClass('checked');
-      } );
-
-
-
-      // ---------------条件をクリア end-------------------
-      $('.topicsContent .topicsContent_inner').matchHeight();
-
-    });
   </script>
 
 </body>

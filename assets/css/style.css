@@ -530,4 +530,445 @@ label {
     width: 100% !important;
   }
 }
+
+.hide {
+  display: none;
+}
+
+.l-inner.search_inner {
+  width: 100%;
+}
+
+.SearchSect.SearchSect-easy,
+.SearchSect.SearchSect-kodawari {
+  margin-bottom: 35px;
+}
+
+.main-officeSearch .SearchSect {
+  font-size: 16px;
+  padding: 10px 0;
+}
+
+.main-officeSearch .search_ttl {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.main-officeSearch .search_ttl span {
+  position: relative;
+  padding-left: 45px;
+}
+
+.main-officeSearch .search_ttl span::before {
+  background: url(/image_uniq/office_search/search_ttl_ico.png) no-repeat;
+  background-size: contain;
+  content: "";
+  display: inline-block;
+  height: 36px;
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  width: 36px;
+}
+
+@media screen and (max-width: 767px) {
+  .main-officeSearch .search_ttl {
+    font-size: 21px;
+    margin-bottom: 10px;
+  }
+}
+
+.SearchSect_wrap {
+  border: solid 1px #2778be;
+  padding: 10px;
+}
+
+.SearchSect-kodawari .SearchSect_wrap {
+  border: solid 1px #d9752b;
+}
+
+.SearchSect_wrap .search_subttl {
+  background: #3299cf;
+  color: #FFF;
+  padding: 8px 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* アコーディオン */
+.SearchSect_wrap .search_subttl.search_subttl-acco {
+  cursor: pointer;
+  position: relative;
+}
+
+.SearchSect_wrap .search_subttl.search_subttl-acco:after {
+  content: "\f055";
+  font-family: 'FontAwesome';
+  font-size: 36px;
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+}
+
+.SearchSect_wrap .search_subttl.search_subttl-acco.active:after {
+  content: "\f056";
+}
+
+.SearchSect_wrap .search_subttl.search_subttl-acco + .search_cont {
+  display: none;
+}
+
+.SearchSect_wrap .search_subttl-02 {
+  background: #d9752b;
+}
+
+.SearchSect_wrap .search_subttl .SearchSubttl_ico {
+  position: relative;
+  margin-left: 20px;
+  padding-left: 45px;
+}
+
+.SearchSect_wrap .search_subttl-02 .SearchSubttl_ico {
+  padding-left: 35px;
+}
+
+.SearchSect_wrap .search_subttl .SearchSubttl_ico::before {
+  content: "";
+  display: inline-block;
+  height: 25px;
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  width: 31px;
+}
+
+.SearchSect-easy .search_subttl .SearchSubttl_ico::before {
+  background: url(/image_uniq/office_search/subttl01_ico.png) no-repeat;
+  background-size: contain;
+}
+
+.SearchSect-kodawari .search_subttl .SearchSubttl_ico::before {
+  background: url(/image_uniq/office_search/subttl02_ico.png) no-repeat;
+  background-size: contain;
+  height: 28px;
+  width: 28px;
+}
+
+.SearchSect-theme .search_subttl .SearchSubttl_ico::before {
+  background: url(/image_uniq/office_search/subttl03_ico.png) no-repeat;
+  background-size: contain;
+  height: 30px;
+  width: 30px;
+}
+
+.SearchSect_wrap .search_cont {
+  background: #eff6f8;
+  padding: 15px;
+}
+
+.SearchSect-kodawari .SearchSect_wrap .search_cont {
+  background: #f8f2ef;
+}
+
+.SearchSect_wrap .search_cont .SearchBy {
+  padding: 5px 0;
+}
+
+.SearchSect_wrap .search_cont .SearchBy-kodawari {
+  padding: 25px 0;
+}
+
+.SearchSect_wrap .search_cont .SearchBy_ttl {
+  background: #047298;
+  color: #FFF;
+  display: table-cell;
+  font-size: 17px;
+  font-weight: 600;
+  padding-left: 47px;
+  padding-right: 10px;
+  position: relative;
+  vertical-align: middle;
+  width: 250px;
+}
+
+.SearchSect-kodawari .SearchSect_wrap .SearchBy_ttl {
+  background: none;
+  color: #d9752b;
+  padding-left: 32px;
+}
+
+.SearchBy .SearchBy_ttl span::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 7%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+}
+
+.SearchSect-kodawari .SearchBy_ttl span::before {
+  left: 0;
+}
+
+.SearchBy-area .SearchBy_ttl span:before {
+  background: url(/image_uniq/office_search/area_ico.png) no-repeat;
+  background-size: contain;
+  height: 24px;
+  width: 24px;
+}
+
+.SearchSect-kodawari .SearchBy-area span:before {
+  background: url(/image_uniq/office_search/area_ico_orange.png) no-repeat;
+  background-size: contain;
+  height: 24px;
+  width: 24px;
+}
+
+.SearchSect-kodawari .SearchBy-kodawari span:before {
+  background: url(/image_uniq/office_search/kodawari_ico.png) no-repeat;
+  background-size: contain;
+  height: 23px;
+  width: 23px;
+}
+
+.SearchBy-extent .SearchBy_ttl span:before {
+  background: url(/image_uniq/office_search/extent_ico.png) no-repeat;
+  background-size: contain;
+  height: 22px;
+  width: 22px;
+}
+
+.SearchBy-numb .SearchBy_ttl span:before {
+  background: url(/image_uniq/office_search/numb_ico.png) no-repeat;
+  background-size: contain;
+  height: 19px;
+  width: 24px;
+}
+
+.SearchSect_wrap .search_cont .SearchBy_cont {
+  background: #FFF;
+  display: table-cell;
+  padding: 25px;
+  width: 1130px;
+}
+
+.SearchSect-kodawari .search_cont .SearchBy_cont {
+  display: -ms-grid;
+  display: grid;
+  gap: 1.25%;
+  -ms-grid-columns: 13.1% 13.1% 13.1% 13.1% 13.1% 13.1% 13.1%;
+      grid-template-columns: 13.1% 13.1% 13.1% 13.1% 13.1% 13.1% 13.1%;
+  margin-top: 15px;
+  width: auto;
+}
+
+.SearchSect-kodawari .search_cont .SearchBy_cont-kodawari {
+  display: -ms-grid;
+  display: grid;
+  gap: 1.25%;
+  -ms-grid-columns: 18.8% 18.8% 18.8% 18.8% 18.8%;
+      grid-template-columns: 18.8% 18.8% 18.8% 18.8% 18.8%;
+}
+
+.SearchBy_cont-kodawari label {
+  margin-bottom: 8px;
+}
+
+.search_cont .SearchBy_cont .search_size_lightbox {
+  padding-left: 0;
+}
+
+.SearchSect-easy .SearchBy_cont label {
+  cursor: pointer;
+  display: inline-block;
+}
+
+.search_cont .SearchBy_cont label {
+  padding-right: 25px;
+}
+
+.SearchSect-kodawari .SearchBy_cont > label {
+  padding-right: 0;
+  text-align: center;
+}
+
+.search_cont .SearchBy_cont .SearchBy_inputWrap {
+  display: inline-block;
+}
+
+.search_cont .SearchBy_cont .SearchBy_buttonWrap {
+  display: inline-block;
+}
+
+.search_cont .SearchBy_cont input {
+  margin-right: 8px;
+  padding: 8px 0;
+  max-width: 100px;
+}
+
+.SearchSect-kodawari .SearchBy_cont input[type="checkbox"] {
+  display: none;
+  /*デフォルトのチェックボックスを非表示にする*/
+}
+
+.SearchSect-kodawari .SearchBy_cont input[type="checkbox"] + .label_check {
+  border: solid 1px #dedede;
+  cursor: pointer;
+  display: inline-block;
+  padding: 8px 0;
+  position: relative;
+  width: 100%;
+}
+
+.SearchBy_cont input:checked + .label_check {
+  background: #f19149;
+  color: #FFF;
+}
+
+.SearchSect .SearchSect_wrap .SearchCont_btn {
+  text-align: center;
+}
+
+/* ボタンフォーカスリセット */
+.SearchSect button:focus {
+  outline: none;
+}
+
+.SearchSect .SearchSect_wrap .SearchBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 15px;
+  padding: 0;
+  vertical-align: top;
+}
+
+.SearchSect .SearchSect_wrap .clear_btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  vertical-align: top;
+}
+
+/* テーマで検索 */
+.SearchSect.SearchSect-theme .SearchSect_wrap {
+  border: 1px solid #f46991;
+}
+
+.SearchSect .search_subttl.search_subttl-03 {
+  background: #f46991;
+}
+
+.SearchSect-theme .SearchSect_wrap .search_cont {
+  background: #f8eff4;
+}
+
+/* tab */
+@media screen and (max-width: 1000px) {
+  /* 簡単検索 */
+  .SearchSect-easy .search_cont .SearchBy_cont .SearchBy_inputWrap {
+    display: block;
+    margin: 0 0 10px;
+  }
+  .SearchSect .SearchSect_wrap .SearchBtn {
+    margin-left: 0;
+  }
+  /* こだわり検索 */
+  .SearchSect-kodawari .search_cont .SearchBy_cont {
+    font-size: 12px;
+  }
+}
+
+/* SP */
+@media screen and (max-width: 767px) {
+  /* セクション全体 */
+  .SearchSect_wrap {
+    padding: 5px;
+  }
+  .SearchSect_wrap .search_cont {
+    font-size: 14px;
+    padding: 10px;
+  }
+  .SearchSect_wrap .search_cont .SearchBy_cont {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 15px;
+    width: 100%;
+  }
+  /* 見出し */
+  .SearchSect_wrap .search_subttl {
+    font-size: 16px;
+  }
+  .SearchSect_wrap .search_subttl .small-txt {
+    font-size: 11px;
+  }
+  /* アコーディオン */
+  .SearchSect_wrap .search_subttl.search_subttl-acco:after {
+    font-size: 24px;
+    right: 10px;
+  }
+  /* 簡単検索 */
+  .SearchSect-easy .SearchSect_wrap .search_cont .SearchBy_cont {
+    display: block;
+  }
+  .SearchSect-easy .SearchSect_wrap .search_cont .SearchBy_ttl {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    display: block;
+    font-size: 16px;
+    padding: 5px 5px 5px 50px;
+    width: 100%;
+  }
+  .SearchSect-easy .SearchBy .SearchBy_ttl span::before {
+    left: 4.5%;
+  }
+  .SearchSect-easy .search_cont .SearchBy_cont label {
+    padding: 0;
+    width: 50%;
+  }
+  .SearchSect-easy .search_cont .SearchBy_cont label:first-child {
+    width: 100%;
+  }
+  .SearchSect-easy .search_cont .SearchBy_cont .SearchBy_inputWrap {
+    display: block;
+    width: 280px;
+  }
+  .SearchSect-easy .search_cont .SearchBy_cont .SearchBy_buttonWrap {
+    display: block;
+    text-align: left;
+    width: 100%;
+  }
+  /* こだわり検索 */
+  .SearchSect-kodawari .search_cont .SearchBy_cont {
+    gap: 0% 2%;
+    -ms-grid-columns: 49% 49%;
+        grid-template-columns: 49% 49%;
+  }
+  .SearchSect-kodawari .search_cont .SearchBy_cont label {
+    margin: 2px 0;
+  }
+  .SearchSect_wrap .search_cont .SearchBy-kodawari {
+    padding: 15px 0;
+  }
+  .SearchSect .SearchSect_wrap .SearchBtn,
+  .SearchSect .SearchSect_wrap .clear_btn {
+    display: inline-block;
+    margin: 0 0.5%;
+    width: 48%;
+  }
+  /* テーマで検索 */
+  .SearchSect.SearchSect-theme .ButtonD-light.ButtonD-icon a {
+    font-size: 12px;
+  }
+}
 /*# sourceMappingURL=style.css.map */
