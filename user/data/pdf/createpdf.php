@@ -55,7 +55,10 @@ if( isset($_SESSION['ADMIN']) ) {
   $company_shop = $row_data['shop']; // 屋号
   $company_address = $row_data['address']; // 住所
   $company_tel = $row_data['tel']; // 電話番号
-  $company_fax = $row_data['fax']; // FAX
+  $company_fax = ""; // FAX
+  if( $row_data['fax'] ) {
+    $company_fax = "FAX:" . $row_data['fax'];
+  }
   $company_license = $row_data['license']; // 宅建免許番号
   $company_logo = $row_data['logo_path']; // 会社ロゴ
   $company_rate = $row_data['rate']; // 割引率
@@ -687,7 +690,7 @@ $html = <<< EOF
             </tr>
             <tr>
               <td width="90">TEL:{$company_tel}</td>
-              <td width="90">FAX:{$company_fax}</td>
+              <td width="90">{$company_fax}</td>
             </tr>
           </table>
         </td>
