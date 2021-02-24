@@ -17,6 +17,11 @@ if( !is_login() ) {
   exit();
 }
 
+$err_type = "";
+if( !empty($_GET['err']) && $_GET['err'] === "success" ) {
+  $err_type = "success";
+}
+
 
  ?>
 
@@ -55,6 +60,13 @@ if( !is_login() ) {
           <h2 class="heading-01">登録情報</h2>
 
           <?php
+
+          // エラーを出力
+          if( $err_type ) {
+            htmlErrMessage( $err_type, "データを更新しました" );
+          }
+
+
           // DB接続
           $pdo = dbConect();
 

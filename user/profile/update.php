@@ -118,5 +118,5 @@ updateCompanyProfile( $pdo, $_SESSION['ID'], $_POST['name'], $_POST['shop'], $_P
 // DB切断
 $pdo = null;
 
-header('Location: /member/user/profile');
+header('Location: /member/user/profile?err=success');
 exit();

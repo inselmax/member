@@ -42,6 +42,21 @@ table.table-normal th {
   background: #e7f6fb;
 }
 
+/* アラート */
+.alert-box {
+  background: #ffe6e6;
+  border: solid 1px #d97676;
+}
+
+.alert-box.success {
+  background: #e6ffe6;
+  border: solid 1px #76d976;
+}
+
+.alert-box .alert-box-inner {
+  padding: 10px 15px;
+}
+
 /* ボタン */
 .customBtn {
   background: #047298;

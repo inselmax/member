@@ -561,3 +561,36 @@ function htmlUserLoginForm( $err = null ) {
 
 }
 
+
+// --------------------------------------------------------
+// ・エラーを表示する
+// $err_type (String) エラーの種類
+// $err_content (String) エラー内容
+// return <div>
+function htmlErrMessage( $err_type, $err_content ) {
+
+  $type = "error";
+  if( $err_type ) {
+    $errMesClass = escStr( $err_type );
+  }
+
+  $errMesContent = "";
+  if( $err_content ) {
+    $errMesContent = escStr( $err_content );
+  }
+
+  // $errMessage = '<div class="' . $errMesClass . '">';
+  // $errMessage .= '<p>' . $errMesContent . '</p>';
+  // $errMessage = '</div>';
+
+  // echo $errMessage;
+
+  echo '
+    <div class="alert-box mb-10 ' . $errMesClass . '">
+      <div class="alert-box-inner">
+        <p>' . $errMesContent . '</p>
+      </div>
+    </div>
+  ';
+
+}

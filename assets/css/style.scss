@@ -49,6 +49,20 @@ table.table-normal {
     }
 }
 
+/* アラート */
+.alert-box {
+    background: #ffe6e6;
+    border: solid 1px #d97676;
+    &.success {
+        background: #e6ffe6;
+        border: solid 1px #76d976;
+    }
+
+    .alert-box-inner {
+        padding: 10px 15px;
+    }
+}
+
 /* ボタン */
 
 .customBtn {
