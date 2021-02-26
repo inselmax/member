@@ -413,7 +413,7 @@ function htmlCompanyAddForm2( $post_data = null ) {
           <tr><th>電話番号</th><td><input type="tel" name="tel" pattern="[\d\-]*" value="' . escStr( $post_data["tel"] ) . '">' . $err["tel"] . '</td></tr>
           <tr><th>FAX</th><td><input type="tel" name="fax" pattern="[\d\-]*" value="' . escStr( $post_data["fax"] ) . '">' . $err["fax"] . '</td></tr>
           <tr><th>責任者氏名</th><td><input type="text" name="pic_name" value="' . escStr( $post_data["pic_name"] ) . '">' . $err["pic_name"] . '</td></tr>
-          <tr><th>宅建免許番号</th><td><input type="text" name="pic_name" value="' . escStr( $post_data["license"] ) . '">' . $err["license"] . '</td></tr>
+          <tr><th>宅建免許番号</th><td><input type="text" name="license" value="' . escStr( $post_data["license"] ) . '">' . $err["license"] . '</td></tr>
           <tr><th>取扱物件</th>
             <td>
               <label class="mr-5"><input type="radio" name="type" value="1" '. $radio_01 .'>ビル</label>
