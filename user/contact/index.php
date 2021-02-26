@@ -17,6 +17,11 @@ if( !is_login() ) {
   exit();
 }
 
+$err_type = "";
+if( !empty($_GET['err']) && $_GET['err'] === "success" ) {
+  $err_type = "success";
+}
+
 
 // ----------------------------------------------------------
 // * DB
@@ -90,6 +95,12 @@ $pdo = null;
                     <h2 class="heading-01">お問い合わせ</h2>
 
                     <?php
+
+                    // エラーを出力
+                    if( $err_type ) {
+                        htmlErrMessage( $err_type, "メールを送信しました" );
+                    }
+
                     // お問い合わせフォーム出力
                     htmlContactForm( $company_name, $name, $email );
                     ?>

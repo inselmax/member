@@ -56,6 +56,7 @@
   define("MAIL_SUBJECT_APPROVE", "仲介業者専用サイト登録完了のお知らせ");
   define("MAIL_SUBJECT_SIGNUP", "仲介業者専用サイトのお申し込み");
   define("MAIL_SUBJECT_STAFF_SIGNUP", "ユーザー登録のお知らせ");
+  define("MAIL_SUBJECT_CONTACT", "仲介業者お問い合わせ");
 
   // メールフッター
   define("MAIL_NAIYO_FOOTER", "---------------------------------------

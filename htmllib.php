@@ -171,13 +171,16 @@ function htmlUserDataTable2( $ary ) {
 function htmlContactForm( $company_name, $name, $email ) {
 
   echo '
-      <form action="" method="post"><table class="table table-normal">
+      <form action="sendmail.php" method="post"><table class="table table-normal">
         <tr><th>会社名</th><td><input type="text" name="company" value="' . escStr( $company_name ) . '"></td></tr>
         <tr><th>担当者氏名</th><td><input type="text" name="name" value="' . escStr( $name ) . '"></td></tr>
         <tr><th>メールアドレス</th><td><input type="email" name="email" value="' . escStr( $email ) . '"></td></tr>
         <tr><th>件名</th><td><input type="text" name="title"></td></tr>
         <tr><th>お問い合わせ内容</th><td><textarea name="content" cols="30" rows="10"></textarea></td></tr>
-        <tr><td colspan="2"><button type="submit" class="customBtn">送信</button></td></tr>
+        <tr><td colspan="2">
+          <input type="hidden" name="access_token" value="' . ACCESS_TOKEN . '">
+          <button type="submit" class="customBtn">送信</button>
+        </td></tr>
       </table></form>
     ';
 

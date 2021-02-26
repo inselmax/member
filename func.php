@@ -588,10 +588,10 @@ function getMailTempContact( $formData, $admin ) {
     $mail_content = "";
 
     if( $admin ) { // 管理者宛て
-      $mail_content .= escStr($formData['pic_name']) . "様より\r\n";
+      $mail_content .= escStr($formData['name']) . "様より\r\n";
       $mail_content .= "お問い合わせがありました\r\n\r\n";
     }else { // ユーザー宛て
-      $mail_content .= escStr($formData['pic_name']) . "様\r\n";
+      $mail_content .= escStr($formData['name']) . "様\r\n";
       $mail_content .= "お問い合わせ、ありがとうございます。\r\n";
       $mail_content .= "以下の内容でお問い合わせを受け付けました\r\n\r\n";
     }
@@ -599,18 +599,20 @@ function getMailTempContact( $formData, $admin ) {
     $mail_content .= "\r\n";
     $mail_content .= "【会社名】\r\n";
     $mail_content .= escStr($formData['company']) ."\r\n";
-    $mail_content .= "【住所】\r\n";
+    $mail_content .= "【担当者氏名】\r\n";
     $mail_content .= escStr($formData['name']) ."\r\n";
-    $mail_content .= "【責任者氏名】\r\n";
-    $mail_content .= escStr($formData['pic_name']) ."\r\n";
     $mail_content .= "【メールアドレス】\r\n";
     $mail_content .= escStr($formData['email']) ."\r\n";
+    $mail_content .= "【件名】\r\n";
+    $mail_content .= escStr($formData['title']) ."\r\n";
+    $mail_content .= "【お問い合わせ内容】\r\n";
+    $mail_content .= escStr($formData['content']) ."\r\n";
 
-    if( $admin ) { // 管理者宛て
-      $mail_content .= "\r\n\r\n";
-      $mail_content .= "★管理者ページ（承認はこちら）\r\n";
-      $mail_content .= SITE_DOMAIN . "/member/admin/" . "\r\n";
-    }
+    // if( $admin ) { // 管理者宛て
+    //   $mail_content .= "\r\n\r\n";
+    //   $mail_content .= "★管理者ページ（承認はこちら）\r\n";
+    //   $mail_content .= SITE_DOMAIN . "/member/admin/" . "\r\n";
+    // }
 
     $mail_content .= "\r\n";
 
