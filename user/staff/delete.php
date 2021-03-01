@@ -41,5 +41,5 @@ deleteUserData( $pdo, $user_id, $_SESSION['ID'] );
 // DB切断
 $pdo = null;
 
-header('Location: /member/user/staff/');
+header('Location: /member/user/staff/index.php?err=success&flg=delete');
 exit();

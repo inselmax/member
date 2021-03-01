@@ -17,6 +17,13 @@ if( !is_admin_login() ) {
   exit();
 }
 
+$err_type = "";
+$err_flg = "";
+if( !empty($_GET['err']) && $_GET['err'] === "success" && !empty($_GET['flg']) ) {
+  $err_type = "success";
+  $err_flg = escStr( $_GET['flg'] );
+}
+
 
 // ----------------------------------------------------------
 // * DB
@@ -70,6 +77,17 @@ $pdo = null;
         <div class="content">
 
           <h2 class="heading-01">ユーザー管理</h2>
+
+          <?php
+          // アラートを出力
+          if( $err_type ) {
+            if( $err_flg === "delete" ) {
+              htmlErrMessage( $err_type, "ユーザーを削除しました" );
+            }elseif( $err_flg === "add" ) {
+              htmlErrMessage( $err_type, "ユーザーを追加しました" );
+            }
+          }
+          ?>
 
           <div class="staff-add-box">
           <?php

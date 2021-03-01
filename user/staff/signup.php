@@ -108,7 +108,7 @@ if( $row > 0 || $row2 > 0 ) {
   sendMail( $_POST['email'], MAIL_SUBJECT_STAFF_SIGNUP, $mail_content ); // ユーザー宛て
 
   // リダイレクト
-  header('Location: /member/user/staff/');
+  header('Location: /member/user/staff/index.php?err=success&flg=add');
   exit();
 
 }
