@@ -61,7 +61,7 @@ if( !empty($_GET['err']) && $_GET['err'] === "success" ) {
 
           <?php
 
-          // エラーを出力
+          // アラートを出力
           if( $err_type ) {
             htmlErrMessage( $err_type, "データを更新しました" );
           }
