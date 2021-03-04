@@ -315,15 +315,15 @@ $pdf_file_name = $office_id . '_1_' . $office_update_at . $company_ctat . $compa
 require_once( $Root . "/TCPDF/tcpdf.php" );
 
 // 各設定
-$tcpdf = new TCPDF( "P", "mm", "A4", true, "UTF-8" );
+$tcpdf = new TCPDF( "L", "mm", "A4", true, "UTF-8" );
 $tcpdf->setPrintHeader( false );
 $tcpdf->setPrintFooter( false );
 $tcpdf->SetAutoPageBreak(TRUE, 0);
 // $tcpdf->SetMargins( 0 );
 // $tcpdf->setCellPaddings(0,0,0,0);
-$tcpdf->SetLeftMargin( 9 );
-$tcpdf->SetRightMargin( 5 );
-$tcpdf->SetTopMargin( 10 );
+$tcpdf->SetLeftMargin( 10 );
+// $tcpdf->SetRightMargin( 5 );
+$tcpdf->SetTopMargin( 13 );
 $tcpdf->SetFooterMargin( 0 );
 $tcpdf->AddPage();
 // $tcpdf->SetFont("kozminproregular", "", 10 );
@@ -340,46 +340,61 @@ $html = <<< EOF
 <style>
 
 table {
-    font-size: 7px;
-  }
+  font-size: 8px;
+  letter-spacing: 0.5em;
+}
 
 
 .tit_head {
-  text-align: center;
-  font-size: 14px;
-  background-color: #047298;
-  color:#fff;
+text-align: center;
+font-size: 14px;
+background-color: #047298;
+color:#fff;
 }
 
 .item {
-  font-size: 8px;
-  text-decoration: underline;
+font-size: 9.5px;
+text-decoration: underline;
 }
 
 .p_text {
-  text-decoration: underline;
-  margin: 0px;
+text-decoration: underline;
+margin: 0px;
 }
 
 .b_border td {
-  border-bottom: 1px solid black;
+border-bottom: 1px solid black;
 }
 
 .l_text {
-  font-size: 9.3px;
+font-size: 10px;
 }
 
 .bg_gray {
-  background-color: #f0f0f0;
+background-color: #f0f0f0;
 }
 
 .p_left {
-  padding-left: 2px;
+padding-left: 2px;
 }
 
-.s_text th, .s_text td{
-  font-size: 6.5px;
+.s_text {
+font-size: 5.7px;
 }
+
+.border {
+border: 1px solid black;
+}
+
+.dotborder {
+border: 1px dashed black;
+margin-top: 10px;
+}
+
+.noborder {
+border: 1px solid white;
+}
+
 
 
 </style>
@@ -387,459 +402,640 @@ table {
 
 
 <div class="wrapper">
-
-<table border="0" cellspacing="0" cellpadding="2" style="width: 190mm;">
-    <tr>
-      <td align="right">{$office_create_at}</td>
-    </tr>
-    <tr>
-      <th>
-        <table cellpadding="3" style="width: 190mm;">
-          <tr>
-            <th class="tit_head" align="right" style="width: 105mm;">ニュー若杉ビル</th>　
-            <th class="tit_head" align="left" style="width: 85mm;">諸条件書</th>
-          </tr>
-        </table>
-      </th>
-    </tr>
-    <tr>
-      <td>
-        <table style="width: 190mm;">
-          <tr>
-            <td align="right" style="width: 180mm;">担当：有限会社スペースソリューション</td>
-            <td align="right" style="width: 10mm;">{$office_staff}</td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-</table>
-
-<table border="0" cellspacing="0" cellpadding="0" style="width: 190mm;">
-    <tr>
-      <td class="tbl_01" style="width: 80mm;">
-          <table cellspacing="0" cellpadding="1" style="width: 75mm;">
+<table border="0" cellspacing="0" cellpadding="2" style="width: 270mm;">
+  <tr>
+    <td style="width: 132mm;">
+      <table cellpadding="3" style="width: 132mm;">
+        <tr>
+          <th class="tit_head" align="right" style="width: 57mm;">ニュー若杉ビル</th>　
+          <th class="tit_head" align="left" style="width: 41mm;">諸条件書</th>
+          <td style="width: 4mm;"></td>
+          <td align="right" style="width: 30mm; height: 5mm;"><img src="/member/user/data/pdf/sample/logo.png"></td>
+        </tr>
+      </table>
+      <table border="0" cellspacing="3" cellpadding="0" style="width: 132mm;">
+        <tr>
+          <td class="dotborder">
+            <table border="0" cellspacing="0" cellpadding="2" style="width: 132mm;">
               <tr>
-                  <th class="item">1.建物概要</th>
+                <td align="center" style="width: 20mm;" class="border">外観写真
+                </td>
+                <td style="width: 38mm;"></td>
+                <td align="center" style="width: 20mm;" class="border">募集区図面
+                </td>
+              </tr>
+            </table>
+            <table border="0" cellspacing="0" cellpadding="2" style="width: 132mm;">
+              <tr>
+                <td align="left" style="width: 50mm; height: 64mm;">
+                <img src="/member/user/data/pdf/sample/image10_01.jpg" style="height: 64mm;">
+                </td>
+                <td align="left" style="width: 77mm; height: 64mm;">
+                <img src="{$office_outline}" style="height: 64mm;">
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>    
+      </table>
+      <table cellpadding="0" cellspacing="1" style="width: 132mm;">
+        <tr>
+          <th class="item">1.建物概要</th>
+        </tr>
+        <tr>
+          <td>
+            <table border="1" cellspacing="0" cellpadding="1" style="width: 132mm;">
+              <tr>
+                <th align="center" class="bg_gray" style="width: 33mm;">物件名</th>
+                <td style="width: 98mm;">
+                  <table style="width: 98mm;" border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                      <td>ニュー若杉ビル</td>
+                    </tr>
+                  </table>
+                </td>
               </tr>
               <tr>
-                  <td>
-                    <table border="1" cellspacing="0" cellpadding="1" style="width: 75mm;">
-                      <tr>
-                          <th align="center" class="bg_gray" style="width: 20mm;">所在地</th>
-                          <td style="width: 50mm;">
-                            <table style="width: 50mm;" border="0" cellpadding="0" cellspacing="0">
-                              <tr>
-                                <td>都島区東野田町1-21-14</td>
-                              </tr>
-                            </table>
-                          </td>
-                      </tr>
-                      <tr>
-                          <th align="center" class="bg_gray" style="width: 20mm;">竣工年</th>
-                          <td style="width: 50mm;">
-                            <table style="width: 50mm;" border="0" cellpadding="0" cellspacing="0">
-                              <tr>
-                                <td>1974年8月</td>
-                              </tr>
-                            </table>
-                          </td>
-                      </tr>
-                      <tr>
-                          <th align="center" class="bg_gray" style="width: 20mm;">構造</th>
-                          <td style="width: 50mm;">
-                            <table style="width: 50mm;" border="0" cellpadding="0" cellspacing="0">
-                              <tr>
-                                <td>鉄骨鉄筋コンクリート造（SRC造）</td>
-                              </tr>
-                              <tr>
-                                <td>地上10階建て</td>
-                              </tr>
-                            </table>
-                          </td>
-                      </tr>
-                    </table>
+                <th align="center" class="bg_gray" style="width: 33mm;">所在地</th>
+                <td style="width: 98mm;">
+                  <table style="width: 98mm;" border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                      <td>〒534-0024&emsp;大阪市都島区東野田町1丁目21番14号
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <th align="center" class="bg_gray" style="width: 33mm;">竣工年</th>
+                <td style="width: 98mm;">
+                  <table style="width: 98mm;" border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                      <td>1974年&emsp;旧耐震基準対応</td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <th align="center" class="bg_gray" style="width: 33mm;">構造</th>
+                <td style="width: 98mm;">
+                  <table style="width: 98mm;" border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                      <td>鉄骨鉄筋コンクリート（SRC造）</td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <th align="center" class="bg_gray" style="width: 33mm;">階数</th>
+                <td style="width: 98mm;">
+                  <table style="width: 98mm;" border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                      <td>地上10階</td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <th align="center" class="bg_gray" style="width: 33mm;">
+                  <table cellpadding="4">
+                    <tr>
+                      <td>沿線・最寄り駅</td>
+                    </tr>
+                  </table>
+                </th>
+                <td style="width: 98mm;">
+                  <table style="width: 98mm;" border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                      <td>大阪メトロ長堀鶴見緑地線「京橋」駅1番出口より徒歩1分<br><span class="s_text">※他の沿線は『物件の図面』にて掲載</span></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <table border="0" cellspacing="1" cellpadding="0" style="width: 101mm;">
+        <tr>
+          <th class="item">2.条件対象となる貸室</th>
+        </tr>
+        <tr>
+          <td>
+            <table border="1" cellspacing="0" cellpadding="1" style="width: 101mm;">
+              <tr>
+                <th align="center" class="bg_gray" style="width: 33mm;">
+                  <table cellpadding="2">
+                    <tr>
+                      <td>階数</td>
+                    </tr>
+                  </table>
+                </th>
+                <td style="width: 65mm;">
+                  <table style="width: 65mm;" cellpadding="1">
+                    <tr>
+                      <td class="l_text" align="center" style="width: 20mm;">{$office_kai}</td>
+                      <td align="right" style="width: 5mm;">階</td>
+                      <td class="l_text" align="center" style="width: 27mm;">{$office_gou}</td>
+                      <td align="right" style="width: 8mm;">号室</td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <th align="center" class="bg_gray" style="width: 33mm;">
+                  <table cellpadding="2">
+                    <tr>
+                      <td>契約面積</td>
+                    </tr>
+                  </table>
+                </th>
+                <td style="width: 65mm;">
+                  <table style="width: 65mm;" cellpadding="1">
+                    <tr>
+                      <td class="l_text" align="center" style="width: 50mm;">{$office_tsubo}</td>
+                      <td align="right" style="width: 10mm;">坪</td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <table border="0" cellspacing="1" cellpadding="0" style="width: 132mm;">
+        <tr>
+          <th class="item">3.契約の諸条件</th>
+        </tr>
+        <tr>
+          <td>
+            <table border="1" cellspacing="0" cellpadding="1" style="width: 132mm;">
+              <tr>
+                <th rowspan="2" align="center" class="bg_gray" style="width: 33mm;">
+                  <table cellpadding="17">
+                    <tr>
+                      <td align="center">保証金</td>
+                    </tr>
+                  </table>
+                </th>
+                <td style="width: 98mm;">
+                  <table style="width: 98mm;">
+                    <tr>
+                      <td class="l_text" align="center" style="width: 85mm;">{$price_hosho}</td>
+                      <td align="right" style="width: 10mm;">円</td>
+                    </tr>
+                    <tr>
+                      <td align="right" style="width: 60mm;">坪単価 (</td>
+                      <td class="l_text" align="center" style="width: 25mm;">{$tanka_hosho}</td>
+                      <td align="right" style="width: 10mm;">) 円</td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td style="width: 98mm;">
+                  <table style="width: 98mm;" cellpadding="0">
+                    <tr>
+                      <td align="left" style="width: 98mm;"><span class="s_text">※契約終了時に契約年数に応じて償却引きが発生。<br>※償却引き率：3年未満30%、10年未満20％、15年未満15%、20年未満10％、20年以上無し</span></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <th align="center" class="bg_gray" style="width: 33mm;">
+                  <table cellpadding="5">
+                    <tr>
+                      <td>月額固定費</td>
+                    </tr>
+                  </table>
+                </th>
+                <td style="width: 98mm;">
+                  <table style="width: 98mm;" cellpadding="3">
+                    <tr>
+                      <td class="l_text" align="center" style="width: 70mm;">{$price_total}</td>
+                      <td align="right" style="width: 25mm;">円＋消費税</td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <th rowspan="2" style="width: 10mm;" class="bg_gray">
+                  <table cellpadding="5">
+                    <tr>
+                      <td align="center">&emsp;内訳</td>
+                    </tr>
+                  </table>
+                </th>
+                <th style="width: 23mm;" class="bg_gray">
+                  <table cellpadding="8">
+                    <tr>
+                      <td align="center">月額賃料</td>
+                    </tr>
+                  </table>
+                </th>
+                <td style="width: 98mm;">
+                  <table style="width: 98mm;">
+                    <tr>
+                      <td class="l_text" align="center" style="width: 70mm;">{$price_chinryo}</td>
+                      <td align="right" style="width: 25mm;">円＋消費税</td>
+                    </tr>
+                    <tr>
+                      <td align="right" style="width: 60mm;">坪単価 (</td>
+                      <td class="l_text" align="center" style="width: 25mm;">{$tanka_chinryo}</td>
+                      <td align="right" style="width: 10mm;">) 円</td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <th style="width: 23mm;" class="bg_gray">
+                  <table cellpadding="8">
+                    <tr>
+                      <td align="center">月額共益費</td>
+                    </tr>
+                  </table>
+                </th>
+                <td style="width: 98mm;">
+                  <table style="width: 98mm;">
+                    <tr>
+                      <td class="l_text" align="center" style="width: 70mm;">{$price_kyoekihi}</td>
+                      <td align="right" style="width: 25mm;">円</td>
+                    </tr>
+                    <tr>
+                      <td align="right" style="width: 60mm;">坪単価 (</td>
+                      <td class="l_text" align="center" style="width: 25mm;">{$tanka_kyoekihi}</td>
+                      <td align="right" style="width: 10mm;">) 円</td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+
+    <td style="width: 6mm;"></td>
+
+    <td style="width: 132mm;">
+      <table border="0" cellspacing="1" cellpadding="0" style="width: 101mm;">
+        <tr>
+          <th class="item">4.契約時、契約中に発生する諸費用</th>
+        </tr>
+        <tr>
+          <td>
+            <table border="1" cellpadding="1" style="width: 101mm;">
+              <tr>
+                <th align="center" class="bg_gray" style="width: 33mm;">
+                  <table cellpadding="1">
+                    <tr>
+                      <td>ネームプレート作成費</td>
+                    </tr>
+                  </table>
+                </th>
+                <td style="width: 65mm;">
+                  <table style="width: 65mm;" cellpadding="0">
+                    <tr>
+                      <td class="l_text" align="center" style="width: 35mm;">{$price_nameplate}</td>
+                      <td align="right" style="width: 25mm;">円＋消費税</td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <table style="width: 132mm;" cellpadding="0" cellspacing="1">
+              <tr>
+                <td class="s_text">※1階テナント案内板、ポスト、貸室ドアに社名を表記します。<br>※契約時のみ発生します。但し、貸借人都合による再作成は、同費用が必要となります。<br>※専用ロゴを作成する場合は、使用カラー、ロゴ形態によって別途費用が必要になります。</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <table border="1" cellpadding="1" style="width: 101mm;">
+              <tr>
+                <th align="center" class="bg_gray" style="width: 33mm;">
+                  <table cellpadding="1">
+                    <tr>
+                      <td>火災保険 (要加入)</td>
+                    </tr>
+                  </table>
+                </th>
+                <td style="width: 65mm;" colspan="2">
+                  <table style="width: 65mm;" cellpadding="0">
+                    <tr>
+                      <td class="l_text" align="center" style="width: 39mm;">-</td>
+                      <td align="right" style="width: 21mm;">円（非課税）</td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <th align="center" class="bg_gray" style="width: 33mm;">
+                  <table cellpadding="1">
+                    <tr>
+                      <td>専有部床清掃費</td>
+                    </tr>
+                  </table>
+                </th>
+                <td style="width: 65mm;">
+                  <table style="width: 65mm;" cellpadding="0">
+                    <tr>
+                      <td class="l_text" align="center" style="width: 35mm;">{$price_clean}</td>
+                      <td align="right" style="width: 25mm;">円＋消費税</td>
+                    </tr>
+                  </table>
+                </td>
+                <td style="width: 65mm;" class="noborder">
+                  <table style="width: 65mm;" cellpadding="1">
+                    <tr>
+                      <td align="left" style="width: 40mm;">（坪当たり1,000円）</td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <table style="width: 132mm;" cellpadding="1" cellspacing="1">
+              <tr>
+                <td class="s_text">※年2回、ビル側で専有部内タイルカーペットの洗浄清掃を行います。上記金額は1回分の金額となり、原則年2回の床清掃を実施いたします。</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <table border="1" cellpadding="1" style="width: 132mm;">
+              <tr>
+                <th align="center" class="bg_gray" style="width: 33mm;">
+                  <table cellpadding="1">
+                    <tr>
+                      <td>貸室内の光熱費</td>
+                    </tr>
+                  </table>
+                </th>
+                <td style="width: 98mm;">
+                  <table style="width: 98mm;" cellpadding="1">
+                    <tr>
+                      <td align="left" style="width: 98mm;">毎月メーター検針を行い、賃料等と併せてご請求となります。</td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <table style="width: 132mm;" cellpadding="1" cellspacing="1">
+              <tr>
+                <td class="s_text">※電気代単価：1kwhあたり35円（基本料なし）</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>  
+      <table border="0" cellspacing="1" cellpadding="0" style="width: 101mm;">
+        <tr>
+          <th class="item">5.主な契約内容</th>
+        </tr>
+        <tr>
+          <td>
+            <table border="1" cellpadding="1" style="width: 132mm;">
+              <tr>
+                <th align="center" class="bg_gray" style="width: 33mm;">
+                  <table cellpadding="1">
+                    <tr>
+                      <td>賃貸借契約期間</td>
+                    </tr>
+                  </table>
+                </th>
+                <td style="width: 98mm;">
+                  <table style="width: 98mm;" cellpadding="1">
+                    <tr>
+                      <td align="left" style="width: 98mm;">2ヶ年契約　以降自動更新となります。</td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <th align="center" class="bg_gray" style="width: 33mm;">
+                  <table cellpadding="1">
+                    <tr>
+                      <td>解約予告期間</td>
+                    </tr>
+                  </table>
+                </th>
+                <td style="width: 98mm;">
+                  <table style="width: 98mm;" cellpadding="1">
+                    <tr>
+                      <td align="left" style="width: 98mm;">6ヶ月前に書面による予告が必要です。</td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <th align="center" class="bg_gray" style="width: 33mm;">
+                  <table cellpadding="1">
+                    <tr>
+                      <td>連帯保証人</td>
+                    </tr>
+                  </table>
+                </th>
+                <td style="width: 98mm;">
+                  <table style="width: 98mm;" cellpadding="1">
+                    <tr>
+                      <td align="left" style="width: 98mm;">基本1名の設定が必要です。</td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <th align="center" class="bg_gray" style="width: 33mm;">
+                  <table cellpadding="8">
+                    <tr>
+                      <td>原状回復</td>
+                    </tr>
+                  </table>
+                </th>
+                <td style="width: 98mm;">
+                  <table style="width: 98mm;" cellpadding="0">
+                    <tr>
+                      <td align="left" style="width: 96mm;">損耗にかかわらず、床タイルカーペット張替、天井・壁面塗装（又は、ク<br>ロス張替）、扉枠、窓面カウンター塗装、等の原状回復費用は、退去時貸<br>借人様ご負担となります。</td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>  
+      <table border="0" cellspacing="1" cellpadding="0" style="width: 101mm;">
+        <tr>
+          <th class="item">6.その他</th>
+        </tr>
+        <tr>
+          <td>
+            <table border="1" cellpadding="1" style="width: 132mm;">
+              <tr>
+                <th align="center" class="bg_gray" style="width: 33mm;">
+                  <table cellpadding="14">
+                    <tr>
+                      <td>ビル開館時間</td>
+                    </tr>
+                  </table>
+                </th>
+                <td style="width: 98mm;">
+                  <table style="width: 98mm;" cellpadding="0">
+                    <tr>
+                      <td align="left" style="width: 98mm;">月曜～土曜　7:30～21:30<br>時間外・日曜・祝日・お盆・年末年始はセキュリティカードにて出入りは<br>可能です。<br>※引越は、「土曜日（祝日以外）」のみとなります。</td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <th align="center" class="bg_gray" style="width: 33mm;">
+                  <table cellpadding="1">
+                    <tr>
+                      <td>空調</td>
+                    </tr>
+                  </table>
+                </th>
+                <td style="width: 98mm;">
+                  <table style="width: 98mm;" cellpadding="1">
+                    <tr>
+                      <td align="left" style="width: 98mm;">ビルマルチ空調<span class="s_text">※ビルマルチエアコン（冷暖房の切り替えはビル側にて実施）</span></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <th align="center" class="bg_gray" style="width: 33mm;">
+                  <table cellpadding="1">
+                    <tr>
+                      <td>エレベーター</td>
+                    </tr>
+                  </table>
+                </th>
+                <td style="width: 98mm;">
+                  <table style="width: 98mm;" cellpadding="1">
+                    <tr>
+                      <td align="left" style="width: 98mm;">1基</td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <th align="center" class="bg_gray" style="width: 33mm;">
+                  <table cellpadding="2">
+                    <tr>
+                      <td>給湯・衛生設備</td>
+                    </tr>
+                  </table>
+                </th>
+                <td style="width: 98mm;">
+                  <table style="width: 98mm;" cellpadding="1">
+                    <tr>
+                      <td align="left" style="width: 98mm;">共用<span class="s_text">（トイレ全面リニューアル済み）</span></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <th rowspan="2" align="center" class="bg_gray" style="width: 33mm;">
+                  <table cellpadding="8">
+                    <tr>
+                      <td>セキュリティ</td>
+                    </tr>
+                  </table>
+                </th>
+                <td style="width: 98mm;">
+                  <table style="width: 98mm;" cellpadding="1">
+                    <tr>
+                      <td align="left" style="width: 101mm;">管理人常駐による警備（月～土　7：30～18：00実施。日祝なし）</td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td style="width: 98mm;">
+                  <table style="width: 98mm;" cellpadding="1">
+                    <tr>
+                      <td align="left" style="width: 101mm;">セコムによる機械警備及びビル共用部防犯カメラ</td>
+                    </tr>
+                  </table>
                   </td>
               </tr>
-          </table>
-        </td>
-        <td rowspan="2" align="center" style="width: 40mm; height: 31.5mm;">
-            <img src="/member/user/data/pdf/sample/img10_01.jpg" style="height: 31.5mm;">
-        </td>
-        <td rowspan="2" align="center" style="width: 70mm; height: 31.5mm;">
-            <img src="{$office_outline}" style="height: 31.5mm;">
-        </td>
-    </tr>
-    <tr>
-      <td style="width: 80mm;">
-          <table cellspacing="0" cellpadding="1" style="width: 75mm;">
-            <tr>
-                <th class="item">2.条件対象となる貸室</th>
-            </tr>
-            <tr>
-              <td>
-                <table border="1" cellspacing="0" cellpadding="1" style="width: 75mm;">
+              <tr>
+                <th align="center" class="bg_gray" style="width: 33mm;">
+                  <table cellpadding="4">
                     <tr>
-                        <th align="center" class="bg_gray" style="width: 20mm;">階数</th>
-                        <td style="width: 50mm;">
-                          <table style="width: 50mm;">
-                            <tr>
-                              <td align="center" style="width: 15mm;">{$office_kai}</td>
-                              <td align="left" style="width: 5mm;">階</td>
-                              <td align="center" style="width: 20mm;">{$office_gou}</td>
-                              <td align="left" style="width: 10mm;">号室</td>
-                            </tr>
-                          </table>
-                        </td>
+                      <td>鍵</td>
                     </tr>
+                  </table>
+                </th>
+                <td style="width: 98mm;">
+                  <table style="width: 98mm;" cellpadding="0">
                     <tr>
-                        <th align="center" class="bg_gray" style="width: 20mm;">契約面積</th>
-                        <td style="width: 50mm;">
-                          <table style="width: 50mm;">
-                            <tr>
-                              <td align="center" style="width: 40mm;">{$office_tsubo}</td>
-                              <td align="left" style="width: 10mm;">坪</td>
-                            </tr>
-                          </table>
-                        </td>
+                      <td align="left" style="width: 98mm;">初回、シリンダーキー２本・セコムカードキー２枚を無料で貸与<br><span class="s_text">※追加セコムカードキー2,000円（税別）／枚</span></td>
                     </tr>
-                </table>
-              </td>
-            </tr>
-        </table>
-      </td>
-    </tr>
-</table>
-
-<table border="0" cellspacing="0" cellpadding="2" style="width: 190mm;">
-    <tr>
-      <th class="item" colspan="3">3.契約の諸条件</th>
-    </tr>
-    <tr>
-        <td style="width: 90mm;">
-            <table border="1" cellspacing="0" cellpadding="1" style="width: 90mm;">
-                <tr>
-                    <th class="bg_gray" align="center" cellpadding="1" style="width: 35mm;">保証金総額</th>
-                    <td style="width: 55mm;">
-                      <table style="width: 55mm;">
-                        <tr>
-                          <td class="l_text" align="center" style="width: 45mm;">{$price_hosho}</td>
-                          <td align="left" style="width: 10mm;">円</td>
-                        </tr>
-                      </table>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2" align="center">
-                      <table style="width: 90mm;">
-                        <tr>
-                          <td align="right" style="width: 35mm;">坪単価 (</td>
-                          <td align="center" style="width: 30mm;">{$tanka_hosho}</td>
-                          <td align="left" style="width: 25mm;">) 円</td>
-                        </tr>
-                      </table>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <table cellspacing="0" cellpadding="1" style="width: 84mm;">
-                          <tr>
-                            <td>■保証金の償却引き</td>
-                          </tr>
-                          <tr>
-                            <td>契約終了時に契約年数に応じて、以下の割合で保証金から償却引きが発生致します。</td>
-                          </tr>
-                          <tr>
-                            <td>
-                                <table class="s_text" align="center" border="1" cellspacing="0" cellpadding="1" style="width: 77mm;">
-                                    <tr>
-                                        <th class="bg_gray" style="width: 37mm;">3年未満</th>
-                                        <td style="width: 37mm;">保証金の30％</td>
-                                    </tr>
-                                    <tr>
-                                        <th class="bg_gray" style="width: 37mm;">10年未満</th>
-                                        <td style="width: 37mm;">保証金の20％</td>
-                                    </tr>
-                                    <tr>
-                                        <th class="bg_gray" style="width: 37mm;">15年未満</th>
-                                        <td style="width: 37mm;">保証金の15％</td>
-                                    </tr>
-                                    <tr>
-                                        <th class="bg_gray" style="width: 37mm;">20年未満</th>
-                                        <td style="width: 37mm;">保証金の10％</td>
-                                    </tr>
-                                    <tr>
-                                        <th class="bg_gray" style="width: 37mm;">20年以上</th>
-                                        <td style="width: 37mm;">無し</td>
-                                    </tr>
-                                </table>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>※契約年数に関わらず、別途原状回復費用は発生致します。</td>
-                          </tr>
-                        </table>
-                    </td>
-                </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <th align="center" class="bg_gray" style="width: 33mm;">
+                  <table cellpadding="6">
+                    <tr>
+                      <td>喫煙</td>
+                    </tr>
+                  </table>
+                </th>
+                <td style="width: 98mm;">
+                  <table style="width: 98mm;" cellpadding="1">
+                    <tr>
+                      <td align="left" style="width: 98mm;">室内を含み、全館禁煙です。<br>※電子タバコはご利用いただけます。</td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
             </table>
-        </td>
-        <td style="width: 10mm;"></td>
-        <td style="width: 90mm;">
-            <table border="1" cellspacing="0" cellpadding="1" style="width: 90mm;">
-                    <tr>
-                        <th class="bg_gray" align="center" style="width: 35mm;">月額固定費合計</th>
-                        <td style="width: 55mm;">
-                          <table style="width: 55mm;">
-                            <tr>
-                              <td class="l_text" align="center" style="width: 30mm;">{$price_total}</td>
-                              <td align="left" style="width: 25mm;">円＋消費税</td>
-                            </tr>
-                          </table>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <table>
-                              <tr>
-                                <td rowspan="2" align="center">
-                                  <table cellpadding="8">
-                                    <tr>
-                                      <td>月額賃料</td>
-                                    </tr>
-                                  </table>
-                                </td>
-                                <td>
-                                  <table class="b_border" style="width: 35mm;" cellpadding="3">
-                                    <tr>
-                                      <td align="center" style="width: 30mm;">{$price_chinryo}</td>
-                                      <td align="left" style="width: 5mm;">円</td>
-                                    </tr>
-                                  </table>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td>
-                                  <table style="width: 45mm;" cellpadding="3">
-                                    <tr>
-                                      <td align="left" style="width: 10mm;">坪単価</td>
-                                      <td align="center" style="width: 20mm;">{$tanka_chinryo}</td>
-                                      <td align="left" style="width: 5mm;">円</td>
-                                    </tr>
-                                  </table>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td rowspan="2" align="center">
-                                  <table cellpadding="8">
-                                    <tr>
-                                      <td>月額共益費</td>
-                                    </tr>
-                                  </table>
-                                </td>
-                                <td>
-                                  <table class="b_border" style="width: 35mm;" cellpadding="3">
-                                    <tr>
-                                      <td align="center" style="width: 30mm;">{$price_kyoekihi}</td>
-                                      <td align="left" style="width: 5mm;">円</td>
-                                    </tr>
-                                  </table>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td>
-                                  <table style="width: 45mm;" cellpadding="3">
-                                    <tr>
-                                      <td align="left" style="width: 10mm;">坪単価</td>
-                                      <td align="center" style="width: 20mm;">{$tanka_kyoekihi}</td>
-                                      <td align="left" style="width: 5mm;">円</td>
-                                    </tr>
-                                  </table>
-                                </td>
-                              </tr>
-                            </table>
-                        </td>
-                    </tr>
-                </table>
-        </td>
-    </tr>
+          </td>
+        </tr>
+      </table>
+      <table border="0" cellspacing="1" cellpadding="0" style="width: 101mm;">  
+        <tr>
+          <th class="item">7.契約時必要書類</th>
+        </tr>
+        <tr>
+          <td style="width: 132mm;">
+            <table style="width: 132mm;" cellpadding="0" cellspacing="1">
+              <tr>
+                <td align="left" style="width: 132mm;">契約の際は、契約者、連帯保証人それぞれの下記書類が必要です。</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <table border="1" cellpadding="4">
+              <tr>
+                <td align="left" style="width: 132mm;">法人：①会社謄本②印鑑証明書③決算書（直近）<br>個人：①住民票②印鑑証明書③収入証明（源泉徴収票、市町村が発行する課税証明書など）</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+
+  </tr>
 </table>
-
-<table border="0" cellspacing="0" cellpadding="2" style="width: 190mm;">
-    <tr>
-      <th class="item" colspan="3">4.契約時、契約中に発生する諸費用</th>
-    </tr>
-    <tr>
-      <th style="width: 35mm;" rowspan="2">〇ネームプレート作成費</th>
-      <td style="width: 150mm;" colspan="2">
-        <table class="b_border" style="width: 150mm;">
-          <tr>
-            <td align="center" style="width: 20mm;">{$price_nameplate}</td>
-            <th align="left" style="width: 15mm;">円(税別)</th>
-          </tr>
-        </table>
-      </td>
-    </tr>
-    <tr>
-      <td style="width: 150mm;" colspan="2">契約時のみ発生します。1階テナント案内板、ポスト、貸室ドアに社名を表記します。<br>専用ロゴを作成する場合は、使用カラー、ロゴ形態によって別途費用が必要になります。</td>
-    </tr>
-    <tr>
-      <th style="width: 35mm;">〇火災保険</th>
-      <td style="width: 150mm;" colspan="2">
-        <table class="b_border" style="width: 150mm;">
-          <tr>
-            <td align="center" style="width: 20mm;">{$price_fire}</td>
-            <th align="left" style="width: 90mm;">円(非課税・1年)※目安になります。</th>
-          </tr>
-        </table>
-      </td>
-    </tr>
-    <tr>
-      <th style="width: 35mm;" rowspan="2">〇専有部床清掃費</th>
-      <td style="width: 150mm;" colspan="2">
-        <table class="b_border" style="width: 150mm;">
-          <tr>
-            <td align="center" style="width: 20mm;">{$price_clean}</td>
-            <th align="left" style="width: 40mm;">円(税別) (坪当たり{$tanka_clean}円)</th>
-          </tr>
-        </table>
-      </td>
-    </tr>
-    <tr>
-      <td style="width: 150mm;" colspan="2">※年2回、ビル側で専有部内タイルカーペットの洗浄清掃を行います。<br>※上記金額は1回分の金額となります。原則年2回の床清掃を実施いたします。</td>
-    </tr>
-    <tr>
-      <th style="width: 35mm;" rowspan="2">〇エアコン洗浄費</th>
-      <td style="width: 150mm;" colspan="2">契約開始から５年ごとに１回、エアコン分解洗浄に要する費用</td>
-    </tr>
-    <tr>
-      <td style="width: 150mm;" colspan="2">
-        <table style="width: 150mm;" cellspacing="0" cellpadding="0">
-          <tr>
-            <th align="left" style="width: 15mm;" cellspacing="0" cellpadding="0">1台あたり</th>
-            <td align="center" style="width: 15mm;">20,000</td>
-            <td align="left" style="width: 30mm;">円（消費税別）とする</td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-    <tr>
-      <th style="width: 35mm;">〇貸室内の光熱費</th>
-      <td style="width: 150mm;" colspan="2">毎月メーター検針を行い、賃料等と併せてご請求いたします。電気代単価：1kwhあたり35円（基本料無し）</td>
-    </tr>
-    <tr>
-      <th class="item" colspan="3">5.主な契約内容</th>
-    </tr>
-    <tr>
-      <th style="width: 35mm;">〇賃貸借期間</th>
-      <td style="width: 150mm;" colspan="2">2ヵ年契約 以降自動更新となります。</td>
-    </tr>
-    <tr>
-      <th style="width: 35mm;">〇解約予告期間</th>
-      <td style="width: 150mm;" colspan="2">6ヶ月前に書面による予告が必要です。</td>
-    </tr>
-    <tr>
-      <th style="width: 35mm;">〇連帯保証人</th>
-      <td style="width: 150mm;" colspan="2">基本1名必要です。</td>
-    </tr>
-    <tr>
-      <th style="width: 35mm;">〇火災保険の加入</th>
-      <td style="width: 150mm;" colspan="2">破壊・破損・汚損も対象とする借家人賠償責任担保条項・物損害担保条項・施設賠償責任担保条項を含むものにご加入ください。</td>
-    </tr>
-    <tr>
-      <th style="width: 35mm;">〇原状回復</th>
-      <td style="width: 150mm;" colspan="2">床タイルカーペット張替え、天井・壁面塗装塗り替え(又はクロス張替え)、窓面カウンターの塗装関係等、原状回復に掛かる費用は退去時賃借人様ご負担となります。
-      </td>
-    </tr>
-    <tr>
-      <th class="item" colspan="3">6.その他</th>
-    </tr>
-    <tr>
-      <th style="width: 35mm;" rowspan="2">〇ビル開館時間</th>
-      <td style="width: 150mm;" colspan="2">月曜～土曜&emsp;7:30～21:30&emsp;時間外・日曜・祝日・お盆・年末年始はセキュリティカードにて出入りは可能です。</td>
-    </tr>
-    <tr>
-      <td style="width: 150mm;" colspan="2"><span class="p_text">※引越しは「土曜日（祝日以外）」のみとなります。</span></td>
-    </tr>
-    <tr>
-      <th style="width: 35mm;">〇空調</th>
-      <td style="width: 150mm;" colspan="2">個別空調</td>
-    </tr>
-    <tr>
-      <th style="width: 35mm;">〇エレベーター</th>
-      <td style="width: 150mm;" colspan="2">1基</td>
-    </tr>
-    <tr>
-      <th style="width: 35mm;">〇給湯・衛生設備</th>
-      <td style="width: 150mm;" colspan="2">共用（トイレ全面リニューアル済みです！）</td>
-    </tr>
-    <tr>
-      <th style="width: 35mm;">〇セキュリティ</th>
-      <td style="width: 150mm;" colspan="2">管理人常駐による警備（月曜～土曜&emsp;8:00～18:00実施、日祝は無）<br>セコムによる機械警備及びビル共用部防犯カメラ</td>
-    </tr>
-    <tr>
-      <th style="width: 35mm;">〇鍵</th>
-      <td style="width: 150mm;" colspan="2">初回は、シリンダーキー2本・セコムカードキー2枚を無料で貸与。<br>以降は、セコムカードキー１枚につき2,000円(税別)が必要となります。</td>
-    </tr>
-    <tr>
-      <th style="width: 35mm;">〇館内での喫煙について</th>
-      <td style="width: 150mm;" colspan="2">2021年より全館禁煙（室内含む）とさせて頂きます。<br>電子タバコはご利用頂けますが、灰皿の設置はございませんので、各自で処理頂きますようお願いいたします。
-      </td>
-    </tr>
-    <tr>
-      <th class="item" colspan="3">7.必要書類（契約時）</th>
-    </tr>
-    <tr>
-      <th style="width: 35mm;"></th>
-      <td style="width: 150mm;" colspan="2">契約の際は以下の書類が必要となります。法人契約、個人契約により異なります。</td>
-    </tr>
-    <tr>
-      <th style="width: 35mm;"></th>
-      <td style="width: 70mm;">
-        <table class="s_text" border="1" cellspacing="0" cellpadding="1">
-          <tr>
-            <th class="bg_gray" align="center" colspan="2">法人契約</th>
-          </tr>
-          <tr>
-            <th class="bg_gray" align="center">申込法人様</th>
-            <th class="bg_gray" align="center">連帯保証人様</th>
-          </tr>
-          <tr>
-            <td>①会社謄本</td>
-            <td>①住民票</td>
-          </tr>
-          <tr>
-            <td>②印鑑証明書</td>
-            <td>②印鑑証明書</td>
-          </tr>
-          <tr>
-            <td></td>
-            <td>③収入証明</td>
-          </tr>
-        </table>
-      </td>
-      <td style="width: 80mm;">
-        <table class="s_text" border="1" cellspacing="0" cellpadding="1">
-          <tr>
-            <th class="bg_gray" align="center" colspan="2">個人契約</th>
-          </tr>
-          <tr>
-            <th class="bg_gray" align="center">申込法人様</th>
-            <th class="bg_gray" align="center">連帯保証人様</th>
-          </tr>
-          <tr>
-            <td colspan="2">①住民票</td>
-          </tr>
-          <tr>
-            <td colspan="2">②印鑑証明書</td>
-          </tr>
-          <tr>
-            <td colspan="2">③収入証明（源泉徴収票市町村が発行する課税証明書など）</td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-
-  </table>
-
 
 </div>
 EOF;
