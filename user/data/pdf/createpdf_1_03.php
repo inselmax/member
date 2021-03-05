@@ -432,7 +432,7 @@ table {
                 <img src="/member/user/data/pdf/sample/image03_01.jpg" style="height: 64mm;">
                 </td>
                 <td align="left" style="width: 92mm; height: 64mm;">
-                <img src="{$office_outline}" style="height: 64mm;">
+                <img src="{$office_outline}" style="width: 58mm;">
                 </td>
               </tr>
             </table>
