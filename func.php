@@ -477,7 +477,7 @@ function getMailTempSignup( $formData, $admin ) {
       $mail_content .= "仲介業者登録のお申し込みがありました\r\n\r\n";
     }else { // ユーザー宛て
       $mail_content .= escStr($formData['pic_name']) . "様\r\n";
-      $mail_content .= "お問い合わせ、ありがとうございます。\r\n";
+      $mail_content .= "お問い合わせ、ありがとうございます\r\n";
       $mail_content .= "以下の内容で仲介業者登録のお申し込みを受け付けました\r\n\r\n";
     }
 
