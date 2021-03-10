@@ -53,7 +53,7 @@ if( is_login() || is_wksg_login() ) {
         <div class="content">
           <h2 class="heading-01">登録申請完了</h2>
           <div>
-            登録申請完了。
+            登録申請完了
           </div>
         </div>
 
