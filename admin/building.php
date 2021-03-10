@@ -30,6 +30,8 @@ if( !is_wksg_login() ) {
   echoHeadOption();
   ?>
 
+  <link rel="stylesheet" href="/office_search/css/style.css">
+
   <script src="/js/setcookie.js"></script>
   <script src="/member/assets/js/common.js"></script>
 
