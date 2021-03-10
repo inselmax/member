@@ -43,7 +43,11 @@ $pdo = null;
         ?>
 
           <div class="user-box">
-            <p class="c-logo"><img src="/member/user/data/upload/<?php echo $company_logo; ?>" alt="<?php echo $company_name; ?>"></p>
+            <p class="c-logo">
+              <a href="/member/user/profile/">
+                <img src="/member/user/data/upload/<?php echo $company_logo; ?>" alt="<?php echo $company_name; ?>">
+              </a>
+            </p>
             <p class="c-name"><?php echo $company_name; ?></p>
             <p class="u-name">担当　<?php echo $pic_name; ?>　様</p>
           </div>
