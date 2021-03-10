@@ -230,7 +230,7 @@ function htmlCompanyProfile( $ary ) {
       echo '<tr><th>メールアドレス</th><td><input type="email" name="email" value="' . escStr( $ary['email'] ) . '"></td></tr>';
       echo '<tr><th>責任者氏名</th><td><input type="text" name="pic_name" value="' . escStr( $ary['pic_name'] ) . '"></td></tr>';
       echo '<tr><th>宅建免許番号</th><td><input type="text" name="license" value="' . escStr( $ary['license'] ) . '"></td></tr>';
-      echo '<tr><th>取扱物件</th><td>';
+      echo '<tr><th>取扱物件</th><td class="text-align-l">';
         if( $ary['type'] == 1 ) {
           echo 'ビル';
         }elseif( $ary['type'] == 2 ) {

@@ -133,6 +133,19 @@ table.table-normal {
     text-align: center;
 }
 
+/* テキスト */
+
+.text-align-l {
+    text-align: left !important;
+}
+.text-align-r {
+    text-align: right !important;
+}
+.text-align-c {
+    text-align: center !important;
+}
+
+/* レイアウト */
 
 .mt-5 { margin-top: 5px; }
 .mr-5 { margin-right: 5px; }
