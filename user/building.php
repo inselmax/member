@@ -215,7 +215,9 @@ if( $office_flg == 2 ) {
                 <section class="LatestOffice_sect">
                   <div class="LatestOffice_cont">
                     <div class="LatestOffice_thumb">
-                      <img src="/image_common/building01_thumb.jpg" alt="">
+                      <a href="/building/center_bldg_honkan/" target="_brank">
+                        <img src="/image_common/building01_thumb.jpg" alt="">
+                      </a>
                     </div>
                     <div class="LatestOffice_info">
                       <div class="LatestOffice_InfoHead">
@@ -237,7 +239,9 @@ if( $office_flg == 2 ) {
                 <section class="LatestOffice_sect">
                   <div class="LatestOffice_cont">
                     <div class="LatestOffice_thumb">
-                      <img src="/image_common/building02_thumb.jpg" alt="">
+                      <a href="/building/center_bldg_bekkan/" target="_brank">
+                        <img src="/image_common/building02_thumb.jpg" alt="">
+                      </a>
                     </div>
                     <div class="LatestOffice_info">
                       <div class="LatestOffice_InfoHead">
@@ -259,7 +263,9 @@ if( $office_flg == 2 ) {
                 <section class="LatestOffice_sect">
                   <div class="LatestOffice_cont">
                     <div class="LatestOffice_thumb">
-                      <img src="/image_common/building03_thumb.jpg" alt="">
+                      <a href="/building/grand_bldg_honkan/" target="_brank">
+                        <img src="/image_common/building03_thumb.jpg" alt="">
+                      </a>
                     </div>
                     <div class="LatestOffice_info">
                       <div class="LatestOffice_InfoHead">
@@ -281,7 +287,9 @@ if( $office_flg == 2 ) {
                 <section class="LatestOffice_sect">
                   <div class="LatestOffice_cont">
                     <div class="LatestOffice_thumb">
-                      <img src="/image_common/building04_thumb.jpg" alt="">
+                      <a href="/building/grand_bldg_bekkan/" target="_brank">
+                        <img src="/image_common/building04_thumb.jpg" alt="">
+                      </a>
                     </div>
                     <div class="LatestOffice_info">
                       <div class="LatestOffice_InfoHead">
@@ -307,7 +315,9 @@ if( $office_flg == 2 ) {
                 <section class="LatestOffice_sect">
                   <div class="LatestOffice_cont">
                     <div class="LatestOffice_thumb">
-                      <img src="/image_common/building05_thumb.jpg" alt="">
+                      <a href="/building/osakaekimae_bldg/" target="_brank">
+                        <img src="/image_common/building05_thumb.jpg" alt="">
+                      </a>
                     </div>
                     <div class="LatestOffice_info">
                       <div class="LatestOffice_InfoHead">
@@ -329,7 +339,9 @@ if( $office_flg == 2 ) {
                 <section class="LatestOffice_sect">
                   <div class="LatestOffice_cont">
                     <div class="LatestOffice_thumb">
-                      <img src="/image_common/building06_thumb.jpg" alt="">
+                      <a href="/building/nishiumeda_bldg/" target="_brank">
+                        <img src="/image_common/building06_thumb.jpg" alt="">
+                      </a>
                     </div>
                     <div class="LatestOffice_info">
                       <div class="LatestOffice_InfoHead">
@@ -355,7 +367,9 @@ if( $office_flg == 2 ) {
                 <section class="LatestOffice_sect">
                   <div class="LatestOffice_cont">
                     <div class="LatestOffice_thumb">
-                      <img src="/image_common/building07_thumb.jpg" alt="">
+                      <a href="/building/higashiumeda_bldg/" target="_brank">
+                        <img src="/image_common/building07_thumb.jpg" alt="">
+                      </a>
                     </div>
                     <div class="LatestOffice_info">
                       <div class="LatestOffice_InfoHead">
@@ -381,7 +395,9 @@ if( $office_flg == 2 ) {
                 <section class="LatestOffice_sect">
                   <div class="LatestOffice_cont">
                     <div class="LatestOffice_thumb">
-                      <img src="/image_common/building08_thumb.jpg" alt="">
+                      <a href="/building/umeda_bldg/" target="_brank">
+                        <img src="/image_common/building08_thumb.jpg" alt="">
+                      </a>
                     </div>
                     <div class="LatestOffice_info">
                       <div class="LatestOffice_InfoHead">
@@ -407,7 +423,9 @@ if( $office_flg == 2 ) {
                 <section class="LatestOffice_sect">
                   <div class="LatestOffice_cont">
                     <div class="LatestOffice_thumb">
-                      <img src="/image_common/building09_thumb.jpg" alt="">
+                      <a href="/building/wakasugi_bldg_nakatsu/" target="_brank">
+                        <img src="/image_common/building09_thumb.jpg" alt="">
+                      </a>
                     </div>
                     <div class="LatestOffice_info">
                       <div class="LatestOffice_InfoHead">
@@ -433,7 +451,9 @@ if( $office_flg == 2 ) {
                 <section class="LatestOffice_sect">
                   <div class="LatestOffice_cont">
                     <div class="LatestOffice_thumb">
-                      <img src="/image_common/building10_thumb.jpg" alt="">
+                      <a href="/building/new_bldg/" target="_brank">
+                        <img src="/image_common/building10_thumb.jpg" alt="">
+                      </a>
                     </div>
                     <div class="LatestOffice_info">
                       <div class="LatestOffice_InfoHead">
