@@ -287,7 +287,7 @@ function htmlCompanyAddForm() {
 
   echo '
     <form action="register.php" method="post">
-      <p class="mb-10">※下記フォーム全てご入力の上ご申請ください。</p>
+      <p class="mb-10 red bold">※下記フォーム全てご入力の上ご申請ください。</p>
       <table class="table table-normal">
         <tr><th>会社名</th><td><input type="text" name="name" placeholder="株式会社スペースソリューション"></td></tr>
         <tr><th>屋号</th><td><input type="text" name="shop" placeholder=""></td></tr>
