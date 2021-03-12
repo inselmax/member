@@ -117,6 +117,23 @@ $pdo = null;
   </div>
   <!-- wrap end -->
 
+  <script>
+  $(function() {
+      $('form').submit(function() {
+
+          var confirmText = "ユーザーを追加しますか？";
+          if( $(this).data("ftype") === "delete" ) {
+            confirmText = "ユーザーを削除しますか？";
+          }
+
+
+          if (!confirm(confirmText)) {
+              return false;
+          }
+      });
+  });
+  </script>
+
 </body>
 
 </html>

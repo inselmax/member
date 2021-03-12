@@ -48,16 +48,6 @@ $pdo = null;
   echoHeadOption();
   ?>
 
-  <script>
-  $(function() {
-    $('form').submit(function() {
-      if (!confirm('確認')) {
-        return false;
-      }
-    });
-  });
-  </script>
-
 </head>
 <body>
 
@@ -99,6 +89,23 @@ $pdo = null;
     <!-- container end -->
   </div>
   <!-- wrap end -->
+
+  <script>
+  $(function() {
+      $('form').submit(function() {
+
+          var confirmText = "承認しますか？";
+          if( $(this).data("ftype") === "delete" ) {
+            confirmText = "削除しますか？";
+          }
+
+
+          if (!confirm(confirmText)) {
+              return false;
+          }
+      });
+  });
+  </script>
 
 </body>
 </html>
