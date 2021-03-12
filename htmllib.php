@@ -38,7 +38,7 @@ function htmlCompanyDataTable( $ary ) {
 
         if( $value['status'] == 0 ) {
           echo '<td>
-                  <form class="admin_approve_form" action="approve.php" method="post">
+                  <form class="form-company" data-ftype="approve" class="admin_approve_form" action="approve.php" method="post">
                     <input type="hidden" name="id" value="' . $value['id'] . '">
                     <input type="hidden" name="access_token" value="' . ACCESS_TOKEN . '">
                     <button type="submit" name="approveBtn">承認する</button>
@@ -49,7 +49,7 @@ function htmlCompanyDataTable( $ary ) {
         }
 
         echo '<td>
-                <form class="admin_delete_form" action="delete.php" method="post">
+                <form class="form-company" data-ftype="delete" class="admin_delete_form" action="delete.php" method="post">
                   <input type="hidden" name="id" value="' . $value['id'] . '">
                   <input type="hidden" name="access_token" value="' . ACCESS_TOKEN . '">
                   <button type="submit" name="deleteBtn">削除</button>
@@ -137,7 +137,7 @@ function htmlUserDataTable2( $ary ) {
         echo '<td>' . escStr( $value['name'] ) . '</td>';
         echo '<td>' . escStr( $value['email'] ) . '</td>';
         echo '<td>
-                <form action="delete.php" method="post">
+                <form class="form-staff" data-ftype="delete" action="delete.php" method="post">
                   <input type="hidden" name="access_token" value="' . ACCESS_TOKEN . '">
                   <input type="hidden" name="id" value="' . $value['id'] . '">
                   <button type="submit" name="deleteBtn">削除</button>
@@ -171,7 +171,7 @@ function htmlUserDataTable2( $ary ) {
 function htmlContactForm( $company_name, $name, $email ) {
 
   echo '
-      <form action="sendmail.php" method="post"><table class="table table-normal">
+      <form class="form-contact" action="sendmail.php" method="post"><table class="table table-normal">
         <tr><th>会社名</th><td><input type="text" name="company" value="' . escStr( $company_name ) . '"></td></tr>
         <tr><th>担当者氏名</th><td><input type="text" name="name" value="' . escStr( $name ) . '"></td></tr>
         <tr><th>メールアドレス</th><td><input type="email" name="email" value="' . escStr( $email ) . '"></td></tr>
@@ -487,7 +487,7 @@ function htmlUserAddForm( $num ) {
   if( $num < 20 ) {
 
     echo '
-      <form action="signup.php" method="post"><table class="table table-normal">
+      <form class="form-staff" data-ftype="add" action="signup.php" method="post"><table class="table table-normal">
         <tr><th>担当者氏名</th><td><input type="text" name="name"></td></tr>
         <tr><th>メールアドレス</th><td><input type="email" name="email"></td></tr>
         <tr><th>パスワード<p class="red small">※半角英数字それぞれ１文字以上含む、８文字以上</p></th><td><input type="password" name="password"></td></tr>
