@@ -7,7 +7,7 @@
   ---------------------------------------------- */
 body {
   font-size: 14px;
-  font-family: "Noto Sans", "Noto Sans CJK JP", sans-serif;
+  font-family: "Noto Sans Japanese", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
 }
 
 .wrap {
@@ -61,8 +61,7 @@ table.table-normal th {
 .customBtn {
   background: #047298;
   border: 1px solid #404040;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   color: #FFF;
   cursor: pointer;
   display: inline-block;
@@ -72,7 +71,6 @@ table.table-normal th {
   min-width: 150px;
   padding: 15px;
   line-height: 1em;
-  -webkit-transition: all 0.1s ease;
   transition: all 0.1s ease;
   text-align: center;
   vertical-align: middle;
@@ -196,8 +194,7 @@ table.table-normal th {
   position: absolute;
   top: 50%;
   right: 0;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 /* -----------------------------------------------
@@ -206,8 +203,7 @@ table.table-normal th {
 .sidebar {
   background: #FFF;
   border-right: solid 1px #9fcede;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   color: #333;
   width: 260px;
   height: 100%;
@@ -233,8 +229,7 @@ table.table-normal th {
 li.navi-item a {
   background: #FFF;
   border-top: solid 1px #ccc;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   color: #333;
   display: block;
   padding: 20px 0 20px 25px;
@@ -304,8 +299,7 @@ th {
 input[type="text"], textarea, input[type="email"], input[type="tel"], input[type="password"] {
   border: solid 1px #ccc;
   border-radius: 3px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   font-size: 16px;
   padding: 8px;
   width: 100%;
@@ -567,4 +561,3 @@ label {
 .SearchSect.SearchSect-theme {
   margin-bottom: 35px;
 }
-/*# sourceMappingURL=style.css.map */
