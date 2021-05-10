@@ -366,9 +366,9 @@ margin: 0px;
 border-bottom: 1px solid black;
 }
 
-.l_text {
-font-size: 10px;
-}
+// .l_text {
+// font-size: 10px;
+// }
 
 .bg_gray {
 background-color: #f0f0f0;
@@ -448,11 +448,11 @@ border: 1px solid white;
             </table>
             <table border="0" cellspacing="0" cellpadding="2" style="width: 132mm;">
               <tr>
-                <td align="left" style="width: 50mm; height: 64mm;">
-                <img src="/member/user/data/pdf/sample/image10_01.jpg" style="height: 64mm;">
+                <td align="left" style="width: 50mm; height: 63.5mm;">
+                <img src="/member/user/data/pdf/sample/image10_01.jpg" style="height: 63.5mm;">
                 </td>
-                <td align="left" style="width: 77mm; height: 64mm;">
-                <img src="{$office_outline}" style="height: 64mm;">
+                <td align="left" style="width: 77mm; height: 63.5mm;">
+                <img src="{$office_outline}" style="height: 63.5mm;">
                 </td>
               </tr>
             </table>
@@ -492,7 +492,7 @@ border: 1px solid white;
                 <td style="width: 98mm;">
                   <table style="width: 98mm;" border="0" cellpadding="0" cellspacing="0">
                     <tr>
-                      <td>1973年&emsp;旧耐震基準対応</td>
+                      <td>1974年&emsp;旧耐震基準対応</td>
                     </tr>
                   </table>
                 </td>
@@ -553,7 +553,7 @@ border: 1px solid white;
                   </table>
                 </th>
                 <td style="width: 65mm;">
-                  <table style="width: 65mm;" cellpadding="1">
+                  <table style="width: 65mm;" cellpadding="2">
                     <tr>
                       <td class="l_text" align="center" style="width: 20mm;">{$office_kai}</td>
                       <td align="right" style="width: 5mm;">階</td>
@@ -572,7 +572,7 @@ border: 1px solid white;
                   </table>
                 </th>
                 <td style="width: 65mm;">
-                  <table style="width: 65mm;" cellpadding="1">
+                  <table style="width: 65mm;" cellpadding="2">
                     <tr>
                       <td class="l_text" align="center" style="width: 50mm;">{$office_tsubo}</td>
                       <td align="right" style="width: 10mm;">坪</td>
@@ -604,7 +604,7 @@ border: 1px solid white;
                   </table>
                 </th>
                 <td style="width: 98mm;">
-                  <table style="width: 98mm;" cellpadding="0">
+                  <table style="width: 98mm;" cellpadding="1">
                     <tr>
                       <td class="l_text" align="center" style="width: 85mm;">{$price_hosho}</td>
                       <td align="right" style="width: 10mm;">円</td>
@@ -621,40 +621,40 @@ border: 1px solid white;
                 <td style="width: 98mm;">
                   <table style="width: 98mm;" cellpadding="0">
                     <tr>
-                      <td align="left" style="width: 98mm;"><span class="s_text">※契約終了時に契約年数に応じて償却引きが発生。<br>※償却引き率：3年未満30%、10年未満20％、15年未満15%、20年未満10％、20年以上無し</span></td>
+                      <td align="left" style="width: 98mm;"><span class="s_text">※契約終了時に契約年数に応じて償却引きが発生。<br>※償却引き率：3年未満30%、10年未満20％、15年未満15%、20年未満10％、20年以上 無し</span></td>
                     </tr>
                   </table>
                 </td>
               </tr>
               <tr>
                 <th align="center" class="bg_gray" style="width: 33mm;">
-                  <table cellpadding="5">
+                  <table cellpadding="4">
                     <tr>
                       <td>月額固定費</td>
                     </tr>
                   </table>
                 </th>
                 <td style="width: 98mm;">
-                  <table style="width: 98mm;" cellpadding="0" cellspacing="3">
+                  <table style="width: 98mm;" cellpadding="2" cellspacing="3">
                     <tr>
-                      <td class="l_text" align="center" style="width: 67.7mm;">{$price_total}</td>
-                      <td align="right" style="width: 24.4mm;">円＋消費税</td>
+                      <td class="l_text" align="center" style="width: 68mm;">{$price_total}</td>
+                      <td align="right" style="width: 24.8mm;">円＋消費税</td>
                     </tr>
                   </table>
                 </td>
               </tr>
               <tr>
-                <th rowspan="2" style="width: 8mm;" class="bg_gray">
+                <th rowspan="2" style="width: 7.9mm;" class="bg_gray">
                   <table cellpadding="2">
                     <tr>
-                      <td style="height: 1mm;"></td>
+                      <td style="height: 0mm;"></td>
                     </tr>
                     <tr>
-                      <td align="center">&emsp;内訳</td>
+                      <td align="left">&emsp;内訳</td>
                     </tr>
                   </table>
                 </th>
-                <th style="width: 25mm;" class="bg_gray txt_light dottedline border-r">
+                <th style="width: 25.1mm;" class="bg_gray txt_light dottedline border-r">
                   <table cellpadding="8">
                     <tr>
                       <td align="center">月額賃料</td>
@@ -662,7 +662,7 @@ border: 1px solid white;
                   </table>
                 </th>
                 <td style="width: 98mm;" class="dottedline border-l">
-                  <table style="width: 98mm;">
+                  <table style="width: 98mm;" cellpadding="2">
                     <tr>
                       <td class="l_text" align="center" style="width: 70mm;">{$price_chinryo}</td>
                       <td align="right" style="width: 25mm;">円＋消費税</td>
@@ -676,7 +676,7 @@ border: 1px solid white;
                 </td>
               </tr>
               <tr>
-                <th style="width: 25mm;" class="bg_gray txt_light">
+                <th style="width: 25.1mm;" class="bg_gray txt_light">
                   <table cellpadding="8">
                     <tr>
                       <td align="center">月額共益費</td>
@@ -684,7 +684,7 @@ border: 1px solid white;
                   </table>
                 </th>
                 <td style="width: 98mm;" class="dottedline-top">
-                  <table style="width: 98mm;">
+                  <table style="width: 98mm;" cellpadding="2">
                     <tr>
                       <td class="l_text" align="center" style="width: 70mm;">{$price_kyoekihi}</td>
                       <td align="right" style="width: 25mm;">円</td>
@@ -722,7 +722,7 @@ border: 1px solid white;
                   </table>
                 </th>
                 <td style="width: 65mm;">
-                  <table style="width: 65mm;" cellpadding="0">
+                  <table style="width: 65mm;" cellpadding="1">
                     <tr>
                       <td class="l_text" align="center" style="width: 35mm;">{$price_nameplate}</td>
                       <td align="right" style="width: 25mm;">円＋消費税</td>
@@ -785,7 +785,7 @@ border: 1px solid white;
           <td>
             <table style="width: 132mm;" cellpadding="1" cellspacing="1">
               <tr>
-                <td class="s_text">※1 年2回、ビル側で専有部内タイルカーペットの洗浄清掃を行います。上記金額は1回分の金額となり、原則年2回の床清掃を<br>実施いたします。</td>
+                <td class="s_text">※1&emsp;年2回、ビル側で専有部内タイルカーペットの洗浄清掃を行います。上記金額は1回分の金額となり、原則年2回の床清掃を<br>実施いたします。</td>
               </tr>
             </table>
           </td>
@@ -879,14 +879,14 @@ border: 1px solid white;
               </tr>
               <tr>
                 <th align="center" class="bg_gray" style="width: 33mm;">
-                  <table cellpadding="8">
+                  <table cellpadding="10">
                     <tr>
-                      <td>原状回復</td>
+                      <td>&emsp;原状回復</td>
                     </tr>
                   </table>
                 </th>
                 <td style="width: 98mm;">
-                  <table style="width: 98mm;" cellpadding="0">
+                  <table style="width: 98mm;" cellpadding="1">
                     <tr>
                       <td align="left" style="width: 96mm;">損耗にかかわらず、床タイルカーペット張替え、天井・壁面塗装（又は、ク<br>ロス張替え）、扉枠、窓面カウンター塗装、等の原状回復費用は、退去時貸<br>借人様ご負担となります。</td>
                     </tr>
@@ -979,7 +979,7 @@ border: 1px solid white;
                 <td style="width: 98mm;">
                   <table style="width: 98mm;" cellpadding="1">
                     <tr>
-                      <td align="left" style="width: 101mm;">管理人常駐による警備（月～土8:00～18:00 日祝なし）</td>
+                      <td align="left" style="width: 101mm;">管理人常駐による警備（月曜～土曜8:00～18:00&emsp;日祝なし）</td>
                     </tr>
                   </table>
                 </td>
@@ -988,7 +988,7 @@ border: 1px solid white;
                 <td style="width: 98mm;">
                   <table style="width: 98mm;" cellpadding="1">
                     <tr>
-                      <td align="left" style="width: 101mm;">セコムによる機械警備及びビル共用部防犯カメラ</td>
+                      <td align="left" style="width: 101mm;">セコムによる機械警備、及びビル共用部防犯カメラ</td>
                     </tr>
                   </table>
                   </td>
@@ -1046,13 +1046,13 @@ border: 1px solid white;
           <td>
             <table border="1" cellpadding="2">
               <tr>
-                <td align="left" style="width: 132mm;">
+                <td align="left" style="width: 131mm;">
                   <table cellspacing="3">
                     <tr>
                       <td>法人：①会社謄本&emsp;②印鑑登録証明&emsp;③決算書（直近）</td>
                     </tr>
                     <tr>
-                      <td>個人：①住民票&emsp;②印鑑登録証明&emsp;③収入証明（源泉徴収票、市町村が発行する課税証明書など）</td>
+                      <td>個人：①住民票&emsp;&emsp;②印鑑登録証明&emsp;③収入証明（源泉徴収票、市町村が発行する課税証明書など）</td>
                     </tr>
                   </table>
                 </td>
