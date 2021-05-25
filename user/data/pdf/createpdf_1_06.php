@@ -630,7 +630,7 @@ border: 1px solid white;
               </tr>
               <tr>
                 <th align="center" class="bg_gray" style="width: 33mm;">
-                  <table cellpadding="4">
+                  <table cellpadding="5">
                     <tr>
                       <td>月額固定費</td>
                     </tr>
@@ -657,7 +657,7 @@ border: 1px solid white;
                   </table>
                 </th>
                 <th style="width: 25.1mm;" class="bg_gray txt_light dottedline border-r">
-                  <table cellpadding="8">
+                  <table cellpadding="9">
                     <tr>
                       <td align="center">月額賃料</td>
                     </tr>
@@ -679,7 +679,7 @@ border: 1px solid white;
               </tr>
               <tr>
                 <th style="width: 25.1mm;" class="bg_gray txt_light">
-                  <table cellpadding="8">
+                  <table cellpadding="9">
                     <tr>
                       <td align="center">月額共益費</td>
                     </tr>
@@ -835,7 +835,7 @@ border: 1px solid white;
                 <th align="center" class="bg_gray" style="width: 33mm;">
                   <table cellpadding="1">
                     <tr>
-                      <td>賃貸借契約期間</td>
+                      <td>賃貸借契約期間&emsp;</td>
                     </tr>
                   </table>
                 </th>
@@ -851,7 +851,7 @@ border: 1px solid white;
                 <th align="center" class="bg_gray" style="width: 33mm;">
                   <table cellpadding="1">
                     <tr>
-                      <td>解約予告期間</td>
+                      <td>解約予告期間&emsp;</td>
                     </tr>
                   </table>
                 </th>
@@ -867,7 +867,7 @@ border: 1px solid white;
                 <th align="center" class="bg_gray" style="width: 33mm;">
                   <table cellpadding="1">
                     <tr>
-                      <td>連帯保証人</td>
+                      <td>連帯保証人&emsp;</td>
                     </tr>
                   </table>
                 </th>
@@ -926,7 +926,7 @@ border: 1px solid white;
                 <th align="center" class="bg_gray" style="width: 33mm;">
                   <table cellpadding="1">
                     <tr>
-                      <td>空調</td>
+                      <td>空調&emsp;</td>
                     </tr>
                   </table>
                 </th>
