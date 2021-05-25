@@ -57,8 +57,16 @@
                 ssurl = "/member/user/data/pdf/createpdfM.php";
                 break;
 
-            case "m_1":
-                ssurl = "/member/user/data/pdf/createpdfM_1.php";
+            case "m_1_01":
+                ssurl = "/member/user/data/pdf/createpdfM_1_01.php";
+                break;
+
+            case "m_1_02":
+                ssurl = "/member/user/data/pdf/createpdfM_1_02.php";
+                break;
+
+            case "m_1_03":
+                ssurl = "/member/user/data/pdf/createpdfM_1_03.php";
                 break;
         }
 

@@ -95,7 +95,7 @@ if( isset($_SESSION['ADMIN']) ) {
       <th scope="col">図面</th>
       <th scope="col">物件ページ</th>
       <th scope="col">物件詳細</th>
-      <th scope="col" class="hidden">諸条件書</th>
+      <th scope="col">諸条件書</th>
       <th scope="col">検討リスト</th>
     </tr>';
 
@@ -196,10 +196,10 @@ if( isset($_SESSION['ADMIN']) ) {
                 </div>
               </div>
             </td>
-            <td class="btnCell hidden">
+            <td class="btnCell">
               <div class="ButtonE ButtonE-pdf">
                 <div class="pdf_form">
-                  <button class="pdfFormSubmit" data-oid="' . $b_id . '" data-otype="m_1">
+                  <button class="pdfFormSubmit" data-oid="' . $b_id . '" data-otype="m_1_' . substr($b_id, 0, 2) . '">
                     <span class="ButtonB_inner">PDF <span class="loading hidden"><img src="/js/ajax-loader.gif"></span></span>
                   </button>
                 </div>
